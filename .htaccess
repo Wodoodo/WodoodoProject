@@ -1,0 +1,5 @@
+RewriteBase /
+RewriteEngine on
+
+AddDefaultCharset off
+php_flag short_open_tag Off
