@@ -1,5 +1,7 @@
 RewriteBase /
 RewriteEngine on
 
+RewriteRule ^(.*)$ main/index.php [L]
+
 AddDefaultCharset off
 php_flag short_open_tag Off
