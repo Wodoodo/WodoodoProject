@@ -1,0 +1,12 @@
+.header{
+	width: 100%;
+	height: 50px;
+	background-color: #1E6B97; /*20709E;*/
+	margin: 0;
+	padding: 0;
+}
+
+.header .header_wrapper{
+	width: 980px;
+	margin: 0 auto;
+}
