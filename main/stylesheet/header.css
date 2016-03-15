@@ -34,15 +34,30 @@
 	padding-left: 10px;
 	font-family: Arial, Tahoma;
 	font-size: 12px;
-	display: block;
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 35px;
+	margin-right: 15px;
 }
 
-.search:after{
-	content: url('/images/main/search_icon.png');
-	position: absolute;
-	margin-top: 20px;
-	width: 30px;
-	height: 30px;
+.btn_search{
+	background: url('/images/main/search_icon.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: none;
+	width: 18px;
+	height: 28px;
+	display: inline-block;
+	margin-left: -45px;
+	margin-top: 8px;
+	cursor: pointer;
+}
+.btn_search:focus{
+	outline: none;
+}
+
+.mini_menu{
+	margin-right: 0;
 }
 
 .header .header_wrapper .header_block .search:focus{
@@ -101,7 +116,7 @@
 	color: #fff;
 	font-size: 13px;
 	vertical-align: top;
-	margin-right: 15px;
+	margin-right: 10px;
 	font-family: Arial, Tahoma;
 }
 

@@ -9,9 +9,10 @@
 		<div class="header_block">
 			<form method="POST" action="">
 				<input type="text" class="search" maxlength="50" placeholder="Поиск по сайту..." />
+				<input type="submit" class="btn_search" value="">
 			</form>
 		</div>
-		<div class="header_block">
+		<div class="header_block mini_menu">
 			<ul>
 				<li>Профиль</li>
 				<li>Новости</li>

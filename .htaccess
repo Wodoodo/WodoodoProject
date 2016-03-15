@@ -3,5 +3,5 @@ RewriteEngine on
 
 RewriteRule ^$ main/index.php [L]
 
-AddDefaultCharset off
+AddDefaultCharset UTF-8
 php_flag short_open_tag Off
