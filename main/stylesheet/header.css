@@ -1,7 +1,7 @@
 .header{
 	width: 100%;
 	height: 50px;
-	background-color: #1E6B97; /*20709E;*/
+	background-color: #14557a;
 	margin: 0;
 	padding: 0;
 }
@@ -9,4 +9,111 @@
 .header .header_wrapper{
 	width: 980px;
 	margin: 0 auto;
+	height: 100%;
+}
+
+.header .header_wrapper .header_block{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 7px;
+	margin-right: 50px;
+	height: 85%;
+}
+
+.header .header_wrapper .header_block #logo{
+	height: 35px;
+	width: auto;
+}
+
+.header .header_wrapper .header_block .search{
+	height: 30px;
+	width: 400px;
+	border: none;
+	border-radius: 3px;
+	margin-top: 3px;
+	padding-left: 10px;
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	display: block;
+}
+
+.search:after{
+	content: url('/images/main/search_icon.png');
+	position: absolute;
+	margin-top: 20px;
+	width: 30px;
+	height: 30px;
+}
+
+.header .header_wrapper .header_block .search:focus{
+	outline: none;
+}
+
+.header .header_wrapper .header_block .search:focus::-webkit-input-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:focus::-moz-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:focus:-moz-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:focus:-ms-input-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+
+.header .header_wrapper .header_block .search::-webkit-input-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search::-moz-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:-moz-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:-ms-input-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
+}
+
+.header .header_wrapper .header_block ul{
+	list-style: none;
+	vertical-align: top;
+	height: 100%;  
+	margin: 0;
+	padding: 0;
+	margin-top: 8px;
+}
+
+.header .header_wrapper .header_block ul li{
+	display: inline-block;
+	color: #fff;
+	font-size: 13px;
+	vertical-align: top;
+	margin-right: 15px;
+	font-family: Arial, Tahoma;
+}
+
+.header .header_wrapper .header_block ul li:nth-of-type(1),
+.header .header_wrapper .header_block ul li:nth-of-type(2),
+.header .header_wrapper .header_block ul li:nth-of-type(3),
+.header .header_wrapper .header_block ul li:nth-of-type(4),
+.header .header_wrapper .header_block ul li:nth-of-type(5),
+.header .header_wrapper .header_block ul li:nth-of-type(6){
+	display: none;
+} 
+
+@madia screen and (max-width: 980px){
+
 }
