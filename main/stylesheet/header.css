@@ -14,7 +14,6 @@
 
 .header .header_wrapper .header_block{
 	display: inline-block;
-	cursor: pointer;
 	vertical-align: top;
 	margin-top: 7px;
 	margin-right: 50px;
@@ -26,12 +25,66 @@
 	width: auto;
 }
 
-.header .header_wrapper .header_block form input{
+.header .header_wrapper .header_block .search{
 	height: 30px;
 	width: 400px;
 	border: none;
 	border-radius: 3px;
 	margin-top: 3px;
+	padding-left: 10px;
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	display: block;
+}
+
+.search:after{
+	content: url('/images/main/search_icon.png');
+	position: absolute;
+	margin-top: 20px;
+	width: 30px;
+	height: 30px;
+}
+
+.header .header_wrapper .header_block .search:focus{
+	outline: none;
+}
+
+.header .header_wrapper .header_block .search:focus::-webkit-input-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:focus::-moz-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:focus:-moz-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:focus:-ms-input-placeholder{
+	line-height: 100px;  
+	transition: line-height 0.5s ease;
+}
+
+.header .header_wrapper .header_block .search::-webkit-input-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search::-moz-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:-moz-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
+}
+.header .header_wrapper .header_block .search:-ms-input-placeholder{
+	font-style: italic;
+	line-height: 15px;  
+	transition: line-height 0.5s ease;
 }
 
 .header .header_wrapper .header_block ul{
@@ -50,4 +103,17 @@
 	vertical-align: top;
 	margin-right: 15px;
 	font-family: Arial, Tahoma;
+}
+
+.header .header_wrapper .header_block ul li:nth-of-type(1),
+.header .header_wrapper .header_block ul li:nth-of-type(2),
+.header .header_wrapper .header_block ul li:nth-of-type(3),
+.header .header_wrapper .header_block ul li:nth-of-type(4),
+.header .header_wrapper .header_block ul li:nth-of-type(5),
+.header .header_wrapper .header_block ul li:nth-of-type(6){
+	display: none;
+} 
+
+@madia screen and (max-width: 980px){
+
 }

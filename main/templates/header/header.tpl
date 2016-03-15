@@ -8,11 +8,17 @@
 		</div>
 		<div class="header_block">
 			<form method="POST" action="">
-				<input type="text"/>
+				<input type="text" class="search" maxlength="50" placeholder="Поиск по сайту..." />
 			</form>
 		</div>
 		<div class="header_block">
 			<ul>
+				<li>Профиль</li>
+				<li>Новости</li>
+				<li>Сообщения</li>
+				<li>Друзья</li>
+				<li>Сообщества</li>
+				<li>Настройки</li>
 				<li>Помощь</li>
 				<li>Выход из аккаунта</li>
 			</ul>
