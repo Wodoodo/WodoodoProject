@@ -3,7 +3,7 @@
 		<?php
 			include $_SERVER['DOCUMENT_ROOT'].'/main/templates/header/menu.tpl';
 		?>
-		<div class="header_block">
+		<div class="header_block logo">
 			<img id="logo" src="./images/main/logo.png" alt="logo">
 		</div>
 		<div class="header_block">

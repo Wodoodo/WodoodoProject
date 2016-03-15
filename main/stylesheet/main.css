@@ -1,3 +1,7 @@
+@font-face{
+   font-family: RalewayReg;
+   src: url(/fonts/Raleway-Regular.ttf);
+}
 body{
 	margin: 0;
 	padding: 0;
