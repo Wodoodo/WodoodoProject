@@ -5,6 +5,7 @@
 	max-width: 980px;
 	margin: 0 auto;
 	padding-top: 47px;
+	z-index: 10;
 }
 
 .user_photo{
@@ -26,7 +27,7 @@
 	width: auto;
 	height: auto;
 	vertical-align: top;
-	margin-right: 15px;
+	margin-right: 5px;
 }
 
 .user_basic_info ul{
@@ -87,6 +88,7 @@
 	position: absolute;
 	display: inline-block;
 	background-color: rgba(20, 85, 122, 0.8);
+	visibility: hidden;
 }
 
 .user_info::before{
@@ -146,6 +148,14 @@
 		font-size: 12px !important;
 	}
 
+	.user_info_btn{
+		margin-top: 37px !important;
+	}
+
+	.user_info::before{
+		top: 35px !important;
+	}
+
 	.user_basic_info ul{
 		margin-top: 10px !important;
 	}
@@ -154,6 +164,7 @@
 @media only screen and (min-width: 600px) and (max-width: 768px){
 	.userdata{
 		width: 600px !important;
+		position: relative !important;
 	}
 
 	.user_photo{
@@ -170,21 +181,31 @@
 	}
 
 	.user_info{
-		width: 230px !important;
+		width: 250px !important;
+		left: 180px !important;
+    	top: 140px !important;
+	}
+
+	.user_info_btn{
+		margin-top: 37px !important;
+	}
+
+	.user_info::before{
+		border: 12px solid transparent !important;	
+		border-bottom: 15px solid rgba(20, 85, 122, 0.8) !important;
+		left: 185.2px !important;
+		top: -27px !important;
 	}
 
 	.user_basic_info ul{
 		margin-top: 10px !important;
-	}
-
-	.static_list_info{
-		text-align: left !important; 
 	}
 }
 
 @media only screen and (min-width: 480px) and (max-width: 600px){
 	.userdata{
 		width: 480px !important;
+		position: relative !important;
 	}
 
 	.user_photo{
@@ -202,28 +223,38 @@
 		margin-top: 7px !important;
 	}
 
+	.user_info_btn{
+		margin-top: 30px !important;
+	}
+
 	.user_basic_info ul{
 		margin-top: 5px !important;
 	}
 
-	.user_info_btn{
-		display: none !important;
+	.user_info::before{
+		border: 12px solid transparent !important;	
+		border-bottom: 15px solid rgba(20, 85, 122, 0.8) !important;
+		left: 171.2px !important;
+		top: -27px !important;
 	}
 
 	.user_info{
-		display: none !important;
+		width: 250px !important;
+		left: 135px !important;
+    	top: 130px !important;
 	}
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px){
+@media only screen and (max-width: 480px){
 	.userdata{
-		width: 320px !important;
+		width: 370px !important;
+		position: relative !important;
 	}
 
 	.user_photo{
-		width: 80px !important;
-		height: 80px !important;
-		margin-right: 20px !important;
+		width: 70px !important;
+		height: 70px !important;
+		margin-right: 15px !important;
 	}
 
 	.user_name{
@@ -235,15 +266,24 @@
 		margin-top: 7px !important;
 	}
 
+	.user_info_btn{
+		margin-top: 30px !important;
+	}
+
 	.user_basic_info ul{
 		margin-top: 5px !important;
 	}
 
-	.user_info_btn{
-		display: none !important;
+	.user_info::before{
+		border: 12px solid transparent !important;	
+		border-bottom: 15px solid rgba(20, 85, 122, 0.8) !important;
+		left: 197.2px !important;
+		top: -27px !important;
 	}
 
 	.user_info{
-		display: none !important;
+		width: 250px !important;
+		left: 94px !important;
+    	top: 130px !important;
 	}
 }
