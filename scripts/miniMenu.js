@@ -1,9 +1,9 @@
+var isOpen = false;
 $(document).ready(function(){
-	var isOpen = false;
 	$("#services").click(function(){
 		if (!isOpen){
 			$('.menu_services').animate({
-				"height" : 250
+				"height" : 300
 			}, 300, function(){
 				$('.menu_services').animate({
 					"width" : 180
@@ -26,5 +26,15 @@ $(document).ready(function(){
 				isOpen = false;
 			});	
 		}
+	});
+
+	var infoOpen = false;
+
+	/* USER INFO */
+	$('.user_info_btn').click(function(){
+		$('.user_info').css({
+			'visibility':'visible'
+		});
+		$('.user_info').toggle(300);
 	});
 });
