@@ -68,7 +68,7 @@
 	vertical-align: top;
 	margin-top: 45px;
 	cursor: pointer;
-	margin-right: 20px;
+	margin-right: 26px;
 }
 
 .user_info_btn p{
@@ -80,7 +80,7 @@
 }
 
 .user_info{
-	width: 242px;
+	width: 255px;
 	height: 122px;
 	vertical-align: top;
 	border-radius: 5px;
@@ -104,7 +104,7 @@
 	color: #fff;
 	font-size: 12px;
 	display: inline-block;
-	padding-left: 17px;
+	padding-left: 13px;
 	margin: 0;
 	margin-top: 5px;
 	font-family: Roboto;
@@ -116,7 +116,7 @@
 	color: #fff;
 	font-size: 12px;
 	display: inline-block;
-	padding-left: 15px;
+	padding-left: 10px;
 	margin: 0;
 	margin-top: 5px;
 	font-family: Roboto;
@@ -126,4 +126,124 @@
 .list_info li{
 	line-height: 12px;
 	margin-top: 6px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px){
+	.userdata{
+		width: 768px !important;
+	}
+
+	.user_photo{
+		width: 100px !important;
+		height: 100px !important;
+	}
+
+	.user_name{
+		font-size: 28px !important;
+	}
+
+	.user_think{
+		font-size: 12px !important;
+	}
+
+	.user_basic_info ul{
+		margin-top: 10px !important;
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px){
+	.userdata{
+		width: 600px !important;
+	}
+
+	.user_photo{
+		width: 100px !important;
+		height: 100px !important;
+	}
+
+	.user_name{
+		font-size: 28px !important;
+	}
+
+	.user_think{
+		font-size: 12px !important;
+	}
+
+	.user_info{
+		width: 230px !important;
+	}
+
+	.user_basic_info ul{
+		margin-top: 10px !important;
+	}
+
+	.static_list_info{
+		text-align: left !important; 
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 600px){
+	.userdata{
+		width: 480px !important;
+	}
+
+	.user_photo{
+		width: 80px !important;
+		height: 80px !important;
+		margin-right: 20px !important;
+	}
+
+	.user_name{
+		font-size: 24px !important;
+	}
+
+	.user_think{
+		font-size: 12px !important;
+		margin-top: 7px !important;
+	}
+
+	.user_basic_info ul{
+		margin-top: 5px !important;
+	}
+
+	.user_info_btn{
+		display: none !important;
+	}
+
+	.user_info{
+		display: none !important;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+	.userdata{
+		width: 320px !important;
+	}
+
+	.user_photo{
+		width: 80px !important;
+		height: 80px !important;
+		margin-right: 20px !important;
+	}
+
+	.user_name{
+		font-size: 24px !important;
+	}
+
+	.user_think{
+		font-size: 12px !important;
+		margin-top: 7px !important;
+	}
+
+	.user_basic_info ul{
+		margin-top: 5px !important;
+	}
+
+	.user_info_btn{
+		display: none !important;
+	}
+
+	.user_info{
+		display: none !important;
+	}
 }
