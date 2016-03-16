@@ -7,12 +7,9 @@
 	padding: 0;
 }
 
-
 .header .header_wrapper{
-	width: 72%;
+	width: 980px;
 	margin: 0 auto;
-	min-width: 340px;
-	max-width: 980px;
 	height: 100%;
 }
 
@@ -139,11 +136,6 @@
 .header .header_wrapper .header_block ul.right_menu li:nth-of-type(6){
 	display: none;
 } 
-
-@madia screen and (max-width: 980px){
-
-}
-
 /* MENU SERVICES */
 
 #services{
@@ -208,4 +200,53 @@ ul.service_list > li{
 ul.service_list > li:hover{
 	background-color: rgba(255,255,255,0.3);
 	border-bottom: none;
+}
+
+/* MEDIA STYLES */
+
+
+@media only screen and (min-width: 768px) and (max-width: 980px){
+	.header_wrapper{
+		width: 768px !important;
+	}
+	.header_block{
+		margin-right: 20px !important;
+	}
+	.search{
+		width: 300px !important;
+	}
+	.mini_menu{
+		margin-left: 15px !important;
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px){
+	.header_wrapper{
+		width: 600px !important;
+	}
+	.header_block{
+		margin-right: 5px !important;
+	}
+	.search{
+		width: 200px !important;
+	}
+	.mini_menu{
+		margin-left: 5px !important;
+	}
+	.logo{
+		margin-left: 10px;
+		margin-right: 10px !important;
+	}
+	ul.right_menu li{
+		margin-right: 5px !important;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 600px){
+	.header_wrapper{
+		width: 480px !important;
+	}
+	ul.service_list > li{
+		content: '';
+	}
 }
