@@ -5,5 +5,11 @@
 			<div class="profile_avatar"><img src="https://pp.vk.me/c624720/v624720384/4b280/YW7IJWNn-yw.jpg"></div>
 			<p class="menu_name">Александр<br>Чуйко</p>
 		</div>
+		<hr>
+		<ul class="service_list">
+			<li>Кино</li>
+			<li>Игры</li>
+			<li>Путешествия</li>
+		</ul>
 	</div>
 </div>

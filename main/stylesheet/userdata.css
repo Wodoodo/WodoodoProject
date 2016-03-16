@@ -1,6 +1,8 @@
 .userdata{
-	width: 980px;
+	width: 72%;
 	height: 203px;
+	min-width: 340px;
+	max-width: 980px;
 	margin: 0 auto;
 	padding-top: 47px;
 }

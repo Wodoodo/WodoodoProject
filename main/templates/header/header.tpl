@@ -13,7 +13,7 @@
 			</form>
 		</div>
 		<div class="header_block mini_menu">
-			<ul>
+			<ul class="right_menu">
 				<li>Профиль</li>
 				<li>Новости</li>
 				<li>Сообщения</li>
