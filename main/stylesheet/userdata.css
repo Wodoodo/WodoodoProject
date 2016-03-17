@@ -1,16 +1,23 @@
 .userdata{
 	width: 980px;
-	height: 203px;
+	height: 110px;
 	min-width: 340px;
 	max-width: 980px;
 	margin: 0 auto;
 	padding-top: 47px;
 	z-index: 10;
+	margin-top: 25px;
+	padding-top: 5px;
+	padding-left: 5px;
+	position: relative;
+	background-color: white;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	box-sizing: border-box;
 }
 
 .user_photo{
-	width: 130px;
-	height: 130px;
+	width: 100px;
+	height: 100px;
 	border-radius: 5px;
 	margin-right: 26px;
 	display: inline-block;
@@ -34,28 +41,28 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .user_status{
-	color: #fff;
+	color: #000;
 	font-size: 11px;
 	font-family: Tahoma;
 	cursor: default;
 }
 
 .user_name{
-	color: #fff;
-	font-size: 34px;
+	color: #000;
+	font-size: 28px;
 	margin-top: 5px;
 	font-family: RalewayReg;
 	cursor: default;
 }
 
 .user_think{
-	color: #fff;
-	font-size: 14px;
-	margin-top: 11px;
+	color: #000;
+	font-size: 12px;
+	margin-top: 5px;
 	font-family: RalewayReg;
 	cursor: default;
 }
@@ -67,7 +74,7 @@
 	border-radius: 10px;
 	display: inline-block;
 	vertical-align: top;
-	margin-top: 45px;
+	margin-top: 37px;
 	cursor: pointer;
 	margin-right: 26px;
 }
@@ -87,15 +94,16 @@
 	border-radius: 5px;
 	position: absolute;
 	display: inline-block;
+	margin-top: -11px;
 	background-color: rgba(20, 85, 122, 0.8);
-	visibility: hidden;
+	//visibility: hidden;
 }
 
 .user_info::before{
 	content: '';
 	position: absolute;
-    left: -26.8px;
-    top: 43px;
+    left: -27px;
+    top: 45px;
 	border: 12px solid transparent;
 	border-right: 15px solid rgba(20, 85, 122, 0.8);
 }
@@ -133,9 +141,10 @@
 @media only screen and (min-width: 768px) and (max-width: 980px){
 	.userdata{
 		width: 768px !important;
+		//height: 110px !important;
 	}
 
-	.user_photo{
+	/*.user_photo{
 		width: 100px !important;
 		height: 100px !important;
 	}
@@ -153,17 +162,18 @@
 	}
 
 	.user_info::before{
-		top: 35px !important;
+		top: 31px !important;
 	}
 
 	.user_basic_info ul{
 		margin-top: 10px !important;
-	}
+	}*/
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px){
 	.userdata{
-		width: 600px !important;
+		width: 580px !important;
+		height: 110px !important;
 		position: relative !important;
 	}
 
@@ -182,8 +192,9 @@
 
 	.user_info{
 		width: 250px !important;
-		left: 180px !important;
-    	top: 140px !important;
+		left: 186px !important;
+    	top: 113px !important;
+    	margin-top: 3px !important;
 	}
 
 	.user_info_btn{
@@ -205,6 +216,7 @@
 @media only screen and (min-width: 480px) and (max-width: 600px){
 	.userdata{
 		width: 480px !important;
+		height: 90px !important;
 		position: relative !important;
 	}
 
@@ -240,25 +252,33 @@
 
 	.user_info{
 		width: 250px !important;
-		left: 135px !important;
-    	top: 130px !important;
+		left: 140px !important;
+    	top: 94px !important;
+    	margin-top: 3px !important;
 	}
 }
 
 @media only screen and (max-width: 480px){
 	.userdata{
-		width: 370px !important;
+		width: 100% !important;
+		height: 80px !important;
 		position: relative !important;
+		margin-top: 10px !important;
 	}
 
 	.user_photo{
 		width: 70px !important;
 		height: 70px !important;
+		border-radius: 35px !important;
 		margin-right: 15px !important;
 	}
 
+	.user_photo img{
+		border-radius: 35px !important;
+	}
+
 	.user_name{
-		font-size: 24px !important;
+		font-size: 20px !important;
 	}
 
 	.user_think{
@@ -267,7 +287,7 @@
 	}
 
 	.user_info_btn{
-		margin-top: 30px !important;
+		margin-top: 26px !important;
 	}
 
 	.user_basic_info ul{
@@ -283,7 +303,8 @@
 
 	.user_info{
 		width: 250px !important;
-		left: 94px !important;
-    	top: 130px !important;
+		left: 67px !important;
+    	top: 84px !important;
+    	margin-top: 3px !important;
 	}
 }

@@ -15,7 +15,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="user_info_btn">
+	<div class="user_info_btn" title="Показать информацию">
 		<p>i</p>
 	</div>
 	<div class="user_info">
