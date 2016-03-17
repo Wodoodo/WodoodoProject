@@ -5,7 +5,9 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: url('/images/main/mountains.jpg');
+	/*background: url('/images/main/mountains.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;*/
+	background-color: beige;
+	background: url('/images/main/concrete_seamless.png');
 }

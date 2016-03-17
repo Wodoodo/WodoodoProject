@@ -139,20 +139,39 @@
 
 /* MENU SERVICES */
 
-#services{
+input[type="checkbox"].services{
+	display: none;
+	background-color: transparent;
+	border: none;
+	border-radius: 0px;
+}
+label.service_button{
+	display: inline-block;
 	cursor: pointer;
+	width: 35px;
+	height: 35px;
+	background-image: url('/images/main/service_btn.png');
+	background-repeat: no-repeat;	
+}
+
+input[type="checkbox"]:checked.services ~ .menu_services{
+	height: 300px !important;
+}
+input[type="checkbox"]:checked.services ~ .user_basic_info{
+	margin-left: 30px !important;
 }
 
 .menu_services{
 	position: absolute;
 	margin-top: 15px;
 	border-radius: 5px;
-	width: 35px;
+	width: 180px;
 	height: 0;
 	background-color: #14557a;
 	cursor: default;
 	overflow: hidden;
 	z-index: 20;
+	transition: height 0.35s cubic-bezier(0, 0, 0, 1.14)
 }
 .menu_services > .inner_menu{
 	width: 180px;
@@ -203,7 +222,6 @@ ul.service_list > li:hover{
 	background-color: rgba(255,255,255,0.3);
 	border-bottom: none;
 }
-
 /* MEDIA STYLES */
 
 
@@ -229,9 +247,6 @@ ul.service_list > li:hover{
 	.header_block{
 		margin-right: 5px !important;
 	}
-	.search{
-		width: 200px !important;
-	}
 	.mini_menu{
 		margin-left: 5px !important;
 	}
@@ -243,7 +258,7 @@ ul.service_list > li:hover{
 		margin-right: 5px !important;
 	}
 	.search{
-		width: 310px !important;
+		width: 275px !important;
 	}
 	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(1),
 	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(2){
@@ -282,10 +297,14 @@ ul.service_list > li:hover{
 	ul.right_menu{
 		margin-top: 3px !important;
 	}
+	.service{
+		margin-right: 5px !important;
+	}
 }
 @media only screen and (max-width: 480px){
 	.header_wrapper{
-		width: 300px !important;
+		width: 100% !important;
+		min-width: 275px;
 	}
 	.block_search{
 		display: none !important;
@@ -311,5 +330,14 @@ ul.service_list > li:hover{
 	ul.right_menu > li > img{
 		margin-top: 3px !important;
 		width: 20px !important;
+	}
+	.service{
+		margin-left: 5px;
+		margin-right: 5px !important;
+		float: left;
+	}	
+	.mini_menu{
+		float: right;
+		margin-right: 5px;
 	}
 }
