@@ -1,8 +1,13 @@
+@font-face{
+   font-family: DroidSans;
+   src: url(/fonts/Droid_Sans.ttf);
+}
+
 .header{
 	box-sizing: border-box;
 	width: 100%;
 	height: 50px;
-	background-color: #14557a;
+	background-color: #01579b;
 	margin: 0;
 	padding: 0;
 }
@@ -16,28 +21,29 @@
 .header .header_wrapper .header_block{
 	display: inline-block;
 	vertical-align: top;
-	margin-top: 7px;
-	margin-right: 5.1%;
 	height: 85%;
 }
 
 .header .header_wrapper .header_block #logo{
-	height: 35px;
+	height: 30px;
 	width: auto;
+	margin-top: 9px;
 }
 
 .header .header_wrapper .header_block .search{
-	height: 30px;
-	width: 400px;
+	height: 27px;
+	width: 196px;
 	border: none;
 	border-radius: 3px;
-	margin-top: 3px;
+	margin-top: 11px;
 	padding-left: 10px;
 	font-family: Arial, Tahoma;
 	font-size: 12px;
 	display: inline-block;
 	vertical-align: top;
 	padding-right: 35px;
+	background-color: #004275;
+	color: #fff;
 }
 
 .btn_search{
@@ -49,8 +55,8 @@
 	width: 17px;
 	height: 27px;
 	display: inline-block;
-	margin-left: -30px;
-	margin-top: 8px;
+	margin-left: -26px;
+	margin-top: 14px;
 	cursor: pointer;
 }
 .btn_search:focus{
@@ -60,12 +66,15 @@
 .mini_menu{
 	margin-right: 0 !important;
 	font-size: 13px !important;
-	margin-top: 9px !important;
-	margin-left: 25px;
+	vertical-align: top !important;
 }
 
 .logo{
-	margin-right: 60px !important;
+	margin-right: 17px !important;
+}
+
+.block_search{
+	margin-right: 300px !important;
 }
 
 .header .header_wrapper .header_block .search:focus{
@@ -93,21 +102,25 @@
 	font-style: italic;
 	line-height: 15px;  
 	transition: line-height 0.5s ease;
+	color: #fff;
 }
 .header .header_wrapper .header_block .search::-moz-placeholder{
 	font-style: italic;
 	line-height: 15px;  
 	transition: line-height 0.5s ease;
+	color: #fff;
 }
 .header .header_wrapper .header_block .search:-moz-placeholder{
 	font-style: italic;
 	line-height: 15px;  
 	transition: line-height 0.5s ease;
+	color: #fff;
 }
 .header .header_wrapper .header_block .search:-ms-input-placeholder{
 	font-style: italic;
 	line-height: 15px;  
 	transition: line-height 0.5s ease;
+	color: #fff;
 }
 
 .header .header_wrapper .header_block ul.right_menu{
@@ -116,21 +129,44 @@
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	margin-top: 8px;
 }
 
 .header .header_wrapper .header_block ul.right_menu li{
+	vertical-align: top;
 	display: inline-block;
 	color: #fff;
 	font-size: 13px;
 	vertical-align: top;
-	margin-right: 10px;
+	margin: 0;
 	font-family: Arial, Tahoma;
+	border-right: 1px solid #004378;
+	box-sizing: border-box;
+	height: 50px;
+	padding-left: 13.8px;
+	padding-right: 13.8px;
+	padding-top: 17px;
+	font-family: DroidSans; 
 }
 
-.header .header_wrapper .header_block ul.right_menu li:nth-of-type(3),
-.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4){
+ul.right_menu > li:first-child{
+	border-left: 1px solid #004378;
+}
+
+ul.right_menu li img{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: -5px;
+}
+
+.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4),
+.header .header_wrapper .header_block ul.right_menu li:nth-of-type(5),
+.header .header_wrapper .header_block ul.right_menu li:nth-of-type(6){
 	display: none;
+}
+
+.header .header_wrapper .header_block ul.right_menu li #service{
+	width: 15px;
+	padding-top: 5px;
 }
 
 .header .header_wrapper .header_block ul.right_menu li > img {
@@ -230,10 +266,16 @@ ul.service_list > li:hover{
 		width: 768px !important;
 	}
 	.header_block{
-		margin-right: 20px !important;
+		margin-right: 0px !important;
 	}
 	.search{
-		width: 300px !important;
+		width: 196px !important;
+	}
+	.block_search{
+		margin-right: 60px !important;
+	}
+	.logo{
+		margin-right: 30px !important;
 	}
 	.mini_menu{
 		margin-left: 15px !important;
@@ -245,7 +287,10 @@ ul.service_list > li:hover{
 		width: 600px !important;
 	}
 	.header_block{
-		margin-right: 5px !important;
+		margin-right: 0px !important;
+	}
+	.block_search{
+		margin-right: 130px !important;
 	}
 	.mini_menu{
 		margin-left: 5px !important;
@@ -258,15 +303,21 @@ ul.service_list > li:hover{
 		margin-right: 5px !important;
 	}
 	.search{
-		width: 275px !important;
+		width: 200px !important;
 	}
 	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(1),
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(2){
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(2),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(3){
 		display: none;
 	}
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(3),
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4){
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(5),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(6){
 		display: inline-block;
+		border: none;
+		padding-left: 3px;
+		padding-right: 3px;
+		padding-top: 14px !important;
 	}
 	ul.right_menu{
 		margin-top: 3px !important;
@@ -275,6 +326,9 @@ ul.service_list > li:hover{
 
 @media only screen and (min-width: 480px) and (max-width: 600px){
 	.header_block{
+		margin-right: 0px !important;
+	}
+	.logo{
 		margin-right: 10px !important;
 	}
 	.mini_menu{
@@ -283,16 +337,25 @@ ul.service_list > li:hover{
 	.header_wrapper{
 		width: 480px !important;
 	}
+	.block_search{
+		margin-right: 55px !important;
+	}
 	.search{
 		width: 180px !important;
 	}
 	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(1),
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(2){
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(2),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(3){
 		display: none;
 	}
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(3),
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4){
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(5),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(6){
 		display: inline-block;
+		border: none;
+		padding-left: 3px;
+		padding-right: 3px;
+		padding-top: 14px !important;
 	}
 	ul.right_menu{
 		margin-top: 3px !important;
@@ -310,15 +373,22 @@ ul.service_list > li:hover{
 		display: none !important;
 	}
 	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(1),
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(2){
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(2),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(3){
 		display: none;
 	}
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(3),
-	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4){
-		display: inline-block;
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(4),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(5),
+	.header .header_wrapper .header_block ul.right_menu li:nth-of-type(6){
+		display: inline-block !important;
+		border: none !important;
+		padding-left: 3px;
+		padding-right: 3px;
+		padding-top: 10px !important;
 	}
 	ul.right_menu{
 		margin-top: 3px !important;
+		margin-right: 15px !important;
 	}
 	.mini_menu{
 		margin-left: 0px !important;
