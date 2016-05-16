@@ -1,0 +1,130 @@
+.settings_wrapper{
+	width: 980px;
+	height: auto;
+	margin: 1px auto;
+	background-color: #e5e5e5;
+	border-radius: 0 0 3px 3px;
+	/* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+	box-shadow: 0 1px 0 0 #e1e2e6, 0 0 0 1px #e6e7eb;
+	text-align: center;
+	padding-bottom: 20px;
+	font-family: HelveticaBold;
+	font-size: 14px;
+}
+.city_block{
+	position: relative;
+}
+.hint_block{
+	position: absolute;
+    width: 230px;
+    right: -27px;
+    z-index: 5;
+	height: 0px;
+	background-color: white;
+	overflow-y: scroll !important;
+}
+.city{
+	width: 100%;
+	height: 40px;
+	padding-top: 10px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.city:hover{
+	cursor: pointer;
+	background-color: rgba(0,104,168,0.5);
+}
+.city:hover .city_name{
+	color: white;
+}
+.city_name{
+	font-size: 13px;
+	color: black;
+	margin: 0;
+	padding-left: 5px;
+	text-align: left;
+}
+.area{
+	font-size: 11px;
+	color: gray;
+	margin: 0;
+	padding-left: 5px;
+	text-align: left;
+}
+.user_photo_block{
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	overflow: hidden; 
+}
+input[type='file']{
+	display: inline-block;
+}
+/*.signatures_block{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 20px;
+}
+.signatures_block p{
+	margin: 0;
+	font-family: HelveticaBold;
+	font-size: 14px;
+	margin-top: 26px;
+}*/
+.settings_wrapper form{
+	text-align: right;
+	display: inline-block;
+}
+.settings_wrapper form label{
+	margin-right: 30px;
+	margin-left: 20px;
+}
+
+.settings_wrapper form input,
+.settings_wrapper form select{
+	margin-top: 20px;
+	margin-left: 20px;
+	height: 20px;
+	width: 200px;
+	font-family: HelveticaRegular;
+	font-size: 14px;
+}
+
+.hint_block::-webkit-scrollbar{
+    width: 5px;
+}
+.hint_block::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #e0e0e0;
+    background-color: #e0e0e0;
+}
+.hint_block::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #fff;
+    background-color: #1594ce;
+}
+.hint_block::-webkit-scrollbar-track{
+    border-width:0;
+}
+.hint_block::-webkit-scrollbar-track:hover{
+    //border-left: solid 1px #aaa;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px){
+	.settings_wrapper{
+		width: 768px !important;
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px){
+	.settings_wrapper{
+		width: 600px !important;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 600px){
+	.settings_wrapper{
+		width: 480px !important;
+	}
+}

@@ -1,0 +1,101 @@
+body{
+    background-image: url('/view/images/cinema_back.jpg');
+}
+.horizontal_menu{
+    position: relative;
+    background-color: rgba(0,0,0,0.5) !important;
+    z-index: 5500;
+}
+.film_slider{
+    position: relative;
+    width: 100%;
+    height: 455px;
+    overflow: hidden;
+    margin-top: -57px;
+    z-index: 5000;
+    text-align: center;
+}
+.film_slider > ul{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+.film_slider > ul > li{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-size: cover;
+}
+.film_slider > ul > li > img{
+    max-width: 100%;
+}
+.film_slider > ul > li > .slider_description{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+.slider_description > a{
+    text-decoration: none;
+    color: inherit;
+}
+.slider_description > a:hover{
+    text-decoration: underline;
+    color: white;
+}
+.slider_description > a > p.film_name, .slider_description > p.film_date{
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: left;
+    margin-left: 490px;
+    margin-top: 205px;
+}
+.slider_description > a > p.film_name{
+    margin-bottom: 20px;
+}
+.slider_description > p.film_date{
+    font-weight: 300 !important;
+    font-size: 13px;
+    margin-top: 0;
+}
+
+.music_wrapper{
+	width: 980px;
+	height: auto;
+	margin: 0 auto;
+}
+.genre_menu{
+	width: 200px;
+	height: 600px;
+	padding-top: 25px;
+	display: inline-block;
+	border-right: 1px solid #565656;
+}
+.menu_title{
+	font-family: HelveticaRegular;
+	font-size: 15px;
+	color: #E1D6D6;
+	margin: 0;
+	margin-bottom: 18px;
+}
+.genre_menu > a{
+	text-decoration: none;
+	color: #E1D6D6;
+	margin-left: 15px;
+	font-family: HelveticaRegular;
+	font-size: 14px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	display: block;
+    line-height: 25px;
+}
+.genre_menu > a:hover{
+	text-decoration: underline;
+}

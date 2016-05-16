@@ -1,0 +1,342 @@
+body{
+    background-image: url('/view/images/cinema_back.jpg');
+}
+.horizontal_menu{
+    position: relative;
+    background-color: rgba(0,0,0,0.5) !important;
+    z-index: 5500;
+}
+.film_information{
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+.film_slider{
+    position: relative;
+    width: 100%;
+    height: 455px;
+    overflow: hidden;
+    margin-top: -57px;
+    z-index: 5000;
+    text-align: center;
+}
+.film_slider > ul{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+.film_slider > ul > li{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-size: cover;
+}
+.film_slider > ul > li > img{
+    max-width: 100%;
+}
+.film_slider > ul > li > .slider_description{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+.slider_description > a{
+    text-decoration: none;
+    color: inherit;
+}
+.slider_description > a:hover{
+    text-decoration: underline;
+    color: white;
+}
+.slider_description > a > p.film_name, .slider_description > p.film_date{
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 350px;
+}
+.slider_description > a > p.film_name{
+    margin-bottom: 20px;
+}
+.slider_description > p.film_date{
+    font-weight: 300 !important;
+    font-size: 13px;
+    margin-top: 0;
+}
+ul.options > li{
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    font-family: Verdana;
+    font-size: 13px;
+}
+ul.options > li > select{
+    background-color: #373d47;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+ul.options > li > select:focus{
+    outline: none;
+}
+ul.options > li > select > option{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+
+
+.title{
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 40px;
+}
+.tickets_wrapper{
+    width: 100%;
+}
+.ticket_block{
+    width: 475px;
+    height: 190px;
+    display: inline-block;
+    margin-right: 13px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.film_photo_block{
+    width: 65%;
+    height: 100%;
+    display: inline-block;  
+    background-position: center;
+    border-radius: 14px 0 0 14px;
+    background-size: auto 100%;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+}
+.back_block{
+    width: 100%;
+    height: 100%;
+    border-radius: 14px 0 0 14px;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+}
+.ticket_film_name{
+    color: white;
+    font-family: Verdana;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    margin-top: 141px;
+}
+.ticket_info_block{
+    display: inline-block;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    float: right;
+}
+.ticket_info_block img{
+    width: 75px;
+}
+.ticket_info_block a{
+    text-decoration: none;
+}
+.ticket_info_block a:hover{
+    text-decoration: underline;
+    color: #2c3343;
+}
+.ticket_price{
+    margin: 0;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #2c3343;
+}
+.buy_btn{
+    margin: 0;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 15px;
+    color: #2c3343;
+    margin-top: 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.ticket_film_date{
+    margin: 0;
+    margin-top: 45px;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 11px;
+    color: #2c3343;
+}
+
+
+
+/*FILMS PAGE */
+.film_info_wrapper{
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+.film_info{
+    width: 100%;
+    height: 100px;
+}
+.const_info_list{
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.const_info_list > li {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    font-family: Verdana;
+    font-size: 17px;
+    font-weight: bolder;
+    width: 16%;
+}
+.info_list{
+    list-style: none;
+    margin-top: 10px;
+}
+.info_list > li{
+    text-align: center;
+    display: inline-block;
+    color: white;
+    font-family: Verdana;
+    font-size: 16px;
+    width: 16%;
+}
+.about_film_block{
+    width: 100%;
+    margin-bottom: 30px;
+    height: auto;
+}
+.film_picture_block{
+    width: 200px;
+    height: 300px;
+    margin-right: 10px;
+    display: inline-block;
+    overflow: hidden;
+}
+.film_picture_block > img{
+    width: 100%;
+    height: 100%;
+}
+.about_film{
+    width: 75%;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+.about_film > .title_block_name{
+    padding-left: 0;
+}
+.title_block_name{
+    color: white;
+    text-decoration: underline;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 17px;
+}
+.about_film  .text_block{
+    font-size: 13px;
+    font-family: Tahoma;
+    color: white;
+    margin: 0;
+}
+.description_block,
+.role_block,
+.producer_block{
+    width: 100%;
+    height: 100%;
+}
+.trailer_block{
+    width: 100%;
+    height: 600px;
+    margin-bottom: 30px;
+}
+.picture_film_block{
+    width: 100%;
+    height: 200px;
+}
+.picture_film_block > img{
+    width: 30%;
+    height: 80%;
+    margin-right: 20px;
+}
+.comments_wrapper{
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+.all_comments_block{
+    width: 100%;
+    height: auto;
+}
+.user_comments_block{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.user_comments_block > .user_login{
+    color: white;
+    font-family: Tahoma;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-top: 5px;
+    font-weight: bolder;
+    display: inline-block;
+}
+.user_comments_block > .points_block{
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
+.points_block > p{
+    font-family: Tahoma;
+    font-size: 13px;
+    margin-top: 5px;
+    color: white;
+    display: inline-block;  
+}
+.comments_text_block{
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+}
+.comments_text_block > p{
+    font-family: Tahoma;
+    font-size: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin: 0;
+    color: white;
+}
+.good{
+    border: 1px solid green;
+}
+.bad{
+    border: 1px solid red;
+}
+.satisfactory{
+    border: 1px solid yellow;
+}

@@ -1,0 +1,234 @@
+.user_friends_wrapper{
+	width: 980px;
+	height: auto;
+	margin: 0 auto;
+}
+.block_title{
+	padding-left: 20px;
+	font-family: HelveticaBold;
+	font-size: 24px;
+	display: inline-block;
+	margin-right: 20px;
+}
+.type_page{
+	margin-bottom: 15px;
+	font-family: HelveticaRegular;
+	font-size: 13px;
+}
+p.popular_messages{
+	margin-top: 0;
+}
+.user_friends_wrapper > .type_page > a{
+	text-decoration: none;
+	color: black;
+	font-size: 13px;
+}
+.user_friends_wrapper > .type_page > a:hover{
+	text-decoration: underline;
+}
+p.have_post{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+	font-family: HelveticaNeueCyr;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: white;
+	height: 45px;
+	padding-top: 15px;
+	border-radius: 3px;
+}
+.all_user_friends_block{
+	width: 100%;
+	min-height: 600px;
+	height: auto;
+	margin: 0 auto;
+	padding-bottom: 15px;
+	border-radius: 5px;
+	background-color: white;
+	padding-top: 7px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.user_friend_block{
+	width: 90%;
+	max-height: 110px;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 15px;
+	padding-bottom: 15px; 
+	border-bottom: 1px solid #e5e5e5;
+}
+.user_friend_photo_block{
+	width: 80px;
+	height: 80px;
+	padding-top: 3px;
+	border-radius: 80px;
+	text-align: center;
+	display: inline-block;
+}
+.user_friend_photo_block img{
+	width: 100%;
+	height: 100%;
+	border-radius: 60px;
+	cursor: pointer;
+}
+.user_friend_info{
+	margin-top: 12px;
+	margin-left: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+.user_friend_name{
+	font-size: 17px;
+	font-family: HelveticaRegular;
+	margin: 0;
+	margin-bottom: 5px;
+}
+.user_friend_name > a{
+	text-decoration: none;
+	color: black;
+}
+.user_friend_name:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.user_friend_add_info{
+	font-family: HelveticaRegular;
+	margin: 0;
+	font-size: 13px;
+}
+.btn_send_message p{
+	color: #1594ce;
+	font-family: HelveticaRegular;
+	font-size: 13px;
+	cursor: pointer; 
+	margin-right: 10px;
+	display: inline-block;
+}
+.btn_send_message p:hover{
+	text-decoration: underline;
+}
+
+
+.online:after, 
+.offline:after {
+	content: '';
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	margin-top: -2px;
+	background-color: #e04b57;
+	border-radius: 5px;
+	margin-left: 5px;
+}
+.online:after {
+    background-color: #00c0e7;
+}
+
+/*.search_friends{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	height: 45px;
+	width: 80%;
+	display: inline-block;
+	background-color: #1594ce;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.search_friends > form > input[type="text"]{
+	margin-left: 10px;
+	margin-top: 12px;
+	background-color: transparent;
+	border: none;
+	color: white;
+	width: 90%;
+	font-family: HelveticaRegular;
+}
+.search_friends > form > input[type="text"]:focus{
+	outline: none;
+}
+.search_friends > form > input[type="text"]::-webkit-input-placeholder{
+	color: white;
+	font-size: 14px;
+}*/
+.search_friends{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 35px;
+	width: 40%;
+	float: right;
+	vertical-align: top;
+	display: inline-block;
+	margin-top: 10px;
+	border-bottom: solid 2px #e5e5e5;
+}
+
+.search_friends > form > input[type="text"]{
+	margin-left: 10px;
+	margin-top: 12px;
+	background-color: transparent;
+	border: none;
+	width: 90%;
+	font-family: HelveticaRegular;
+}
+.search_friends > form > input[type="text"]:focus{
+	outline: none;
+}
+.search_friends > form > input[type="text"]::-webkit-input-placeholder{
+	font-size: 14px;
+	font-style: italic;
+	color: black;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px){
+	.user_friends_wrapper{
+		width: 768px;
+	}
+}
+@media only screen and (min-width: 600px) and (max-width: 768px){
+	.user_friends_wrapper{
+		width: 600px !important;
+	}
+}
+@media only screen and (min-width: 480px) and (max-width: 600px){
+	.user_friends_wrapper{
+		width: 100% !important;
+	}
+}
+@media only screen and (max-width: 480px){
+	.user_friends_wrapper{
+		width: 100% !important;
+	}
+	.block_title{
+		font-size: 22px !important;
+		padding-left: 10px !important;
+	}
+	.type_page{
+		padding-left: 10px !important;
+	}
+	.type_page > a{
+		display: block !important;
+	}
+	.user_friend_photo_block{
+		width: 60px !important;
+		height: 60px !important;
+		padding-top: 10px !important;
+	}
+	.user_friend_name{
+		font-size: 15px !important;
+	}
+	.user_friend_add_info{
+		font-size: 11px !important;
+	}
+	.btn_send_message  p{
+		font-size: 11px !important;
+	}
+}
