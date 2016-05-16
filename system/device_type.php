@@ -613,4 +613,3 @@ class Mobile_Detect
         'Symbian'          => array('SymbianOS/[VER]', 'Symbian/[VER]'),
         'webOS'            => array('webOS/[VER]', 'hpwOS/[VER];'),
     );
-  
