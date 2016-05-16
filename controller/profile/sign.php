@@ -47,5 +47,33 @@
 			ob_end_clean();
 			exit(header("Location: /profile/sign/signin"));
 		}
+
+		public function remember(){
+			$pageStyles = array('login');
+			$this->registry->set('pageStyles', $pageStyles);
+			if (isset($_POST['send_request'])){
+				$signData = array();
+				$signData['email'] = $this->db->escape($_POST['email']);
+
+				$this->load->model('login/login');
+				$this->model_login_login->remember($signData);
+			}
+			if (isset($_POST['change_pass'])){
+				$signData = array();
+				$signData['password'] = $this->db->escape($_POST['password']);
+				$signData['repassword'] = $this->db->escape($_POST['repassword']);
+				$signData['request_key'] = $this->db->escape($_POST['request_key']);
+
+				$this->load->model('login/login');
+				$this->model_login_login->changePass($signData);
+			}
+			if (isset($_GET['request'])){
+				$data['request'] = $_GET['request'];
+				$this->load->view('profile/changepass', $data);
+			} else {
+				$this->load->view('profile/remember');
+			}
+		}
+
 	}
 ?>
