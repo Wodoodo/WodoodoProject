@@ -19,6 +19,7 @@
                 $userOwner = $this->db->escape($posts->rows[$i]['owner_id']);
                 $userOwner = $this->db->query("SELECT * FROM `users` WHERE `user_id` = '$userOwner'");
                 $posts->rows[$i]['user'] = $userId->row['user_id'];
+                $posts->rows[$i]['likers'] = $this->getLikers($posts->rows[$i]['post_id']);
                 $posts->rows[$i]['like_number'] = $this->getLikesCount($posts->rows[$i]['post_id']);
                 $posts->rows[$i]['like_state'] = $this->getLikeState($posts->rows[$i]['post_id']);
                 $posts->rows[$i]['user_name'] = $userOwner->row['user_firstname'] . ' ' . $userOwner->row['user_lastname'];
@@ -196,6 +197,12 @@
         public function getUserLikeCount($userId){
             $userLikeCount = $this->db->query("SELECT * FROM `likes` WHERE `user_id`='$userId'");
             return $userLikeCount->num_rows;
+        }
+
+        public function getLikers($postId){
+            $postId = $this->db->escape($postId);
+            $likers = $this->db->query("SELECT * FROM likes RIGHT OUTER JOIN users ON users.user_id = likes.user_id WHERE likes.post_id = '$postId'");//$this->db->query("SELECT `user_id` FROM `likes` WHERE `post_id`='$postId'");
+            return $likers;
         }
     }
 ?>

@@ -34,6 +34,7 @@
                     unset($_SESSION['email']);
                     unset($_SESSION['firstname']);
                     unset($_SESSION['lastname']);
+                    mail_utf8($parameters['auth_email'], 'Регистрация на Wodoodo', "Информация для входа на Wodoodo: <br>Ваш E-Mail: " . $parameters['auth_email'] . "<br>Ваш пароль: " . $parameters['auth_pass'] . "<br>Спасибо за регистрацию!", 'info@wodoodo');
                     MessageSend("ok", "Ваш аккаунт успешно зарегистрирован, выполните вход ниже","profile/sign/signin");
                 } else {
                     MessageSend("error", "Введенные Вами пароли не совпадают", "profile/sign/signup");

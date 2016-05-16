@@ -34,14 +34,22 @@
 						<p><?php echo $userPost->rows[$i]['post_text']; ?></p>
 					</div>
 					<div class="post_comm_like">
-						<div class="likers_block">
-							<div class="likers_photo_block">
-							</div>
-							<p class="all_likers_btn">Показать все</p>
-						</div>
 						<div class="<?php echo (strcmp($userPost->rows[$i]['like_state'], 'false') == 0) ? btn_like : btn_like_press; ?>" like="<?php echo $userPost->rows[$i]['like_state']; ?>" postid="<?php echo $userPost->rows[$i]['post_id']; ?>">
 							<p class="like_number"><?php echo $userPost->rows[$i]['like_number']; ?></p><p class="like_button">LIKE</p>
 						</div>
+						<div class="likers_block">
+							<div class="likers_photo_block">
+							<?php if($userPost->rows[$i]['likers']->num_rows > 5){
+									$numRows = 5;
+								  } else {
+								  	$numRows = $userPost->rows[$i]['likers']->num_rows;
+								  }
+							for($j = 0; $j < $numRows; $j++){ ?>
+								<a href="/profile/user?id=<?php echo $userPost->rows[$i]['likers']->rows[$j]['user_id']; ?>"><img src="/view/images/users/<?php echo $userPost->rows[$i]['likers']->rows[$j]['user_photo'];?>" title="<?php echo $userPost->rows[$i]['likers']->rows[$j]['user_firstname'] . ' ' . $userPost->rows[$i]['likers']->rows[$j]['user_lastname']; ?>"></a>	
+							<?php } ?>
+							</div>
+						</div>
+						<div class="all_likers_btn" title="Показать всех">...</div>
 					</div>
 				</div>
 				<?php if (count($images->images) > 0) { ?>
@@ -63,6 +71,13 @@
 		<div id="close_slider">x</div>
 		<div class="photo_slider_image">
 			<img src="" alt="">
+		</div>
+	</div>
+</div>
+<div class="all_likers_block">
+	<div class="block">
+		<div id="close_block">x</div>
+		<div class="photo_users_block">
 		</div>
 	</div>
 </div>
