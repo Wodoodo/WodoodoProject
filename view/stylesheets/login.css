@@ -1,0 +1,127 @@
+@font-face{
+   font-family: HelveticaLight;
+   src: url("/view/fonts/HelveticaLight.ttf");
+}
+
+@font-face{
+   font-family: HelveticaRegular;
+   src: url("/view/fonts/HelveticaRegular.ttf");
+}
+
+@font-face{
+   font-family: HelveticaBold;
+   src: url("/view/fonts/HelveticaBold.ttf");
+}
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #0068a8;
+}
+.login, .register{
+	position: absolute;
+	width: 230px;
+	height: 280px;
+	top: 50%;
+	left: 50%;
+	margin-left: -115px;
+	margin-top: -140px;
+}
+.register{
+	height: 355px;
+	margin-top: -172.5px;
+}
+.login > a, .register > a{
+	text-decoration: none;
+	color: inherit;
+}
+.login > a:hover > p, .register > a:hover > p{
+	text-decoration: underline;
+}
+.login > p, .login > a > p, .register > a > p, .register > p{
+	color: white;
+	font-family: HelveticaRegular;
+	font-size: 13px;
+	text-align: center;
+}
+.login > form > input, .login > form > input[type="password"], .register > form > input, .register > form > input[type="text"], .register > form > input[type="email"]{
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	height: 30px;
+	border: none;
+	color: white;
+	background-color: transparent;
+	font-family: HelveticaLight;
+	border-bottom: 1px solid rgba(255,255,255,0.7);
+	margin-top: 10px;
+}
+.login > form > input:focus, .register > form > input:focus{
+	outline: none;
+}
+.login > form > input[type="submit"], .register > form > input[type="submit"]{
+	width: 100%;
+	margin-top: 20px;
+	height: 40px;
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+	cursor: pointer;
+	transition: all 0.1s linear;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-ms-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+}
+.login > form > input[type="submit"]:hover, .register > form > input[type="submit"]:hover{
+	background-color: white;
+	color: black;
+}
+.login > form > input::-webkit-input-placeholder, .register > form > input::-webkit-input-placeholder {color: #fff; opacity: 1; transition: opacity 0.3s ease;}
+.login > form > input::-moz-placeholder, .register > form > input::-moz-placeholder {color: #fff; opacity: 1; transition: opacity 0.3s ease;}
+.login > form > input:-moz-placeholder, .register > form > input:-moz-placeholder {color: #fff; opacity: 1; transition: opacity 0.3s ease;}
+.login > form > input:-ms-input-placeholder, .register > form > input:-ms-input-placeholder {color: #fff; opacity: 1; transition: opacity 0.3s ease;}
+.login > form > input:focus::-webkit-input-placeholder, .register > form > input:focus::-webkit-input-placeholder{opacity: 0; transition: opacity 0.3s ease;}
+.login > form > input:focus::-moz-placeholder, .register > form > input:focus::-moz-placeholder{opacity: 0; transition: opacity 0.3s ease;}
+.login > form > input:focus:-moz-placeholder, .register > form > input:focus:-moz-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.login > form > input:focus:-ms-input-placeholder, .register > form > input:focus:-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+
+/* SHOW MESSAGES */
+.show_message{
+	box-sizing: border-box;
+	padding-top: 10px;
+	width: 100%;
+	min-height: 40px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	margin-top: -50px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+}
+.show_message > p{
+	font-size: 13px;
+	font-family: HelveticaRegular;
+	padding: 0;
+	margin: 0;
+	color: white;
+	text-align: center;
+}
+.error_message_popup{
+	background-color: #e74c3c;
+	border-bottom: 2px solid #c0392b;
+}
+.ok_message_popup{
+	background-color: #2ecc71;
+	border-bottom: 2px solid #2cc36b;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px #0068a8 !important;
+    -webkit-text-fill-color: #fff !important;
+    color: #fff !important;
+    border-bottom: 1px solid #B3D2E5 !important;
+}
+input:-webkit-autofill:focus{
+	-webkit-text-fill-color: rgb(255,255,255) !important;
+    color: rgb(255,255,255) !important;
+}

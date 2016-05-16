@@ -1,0 +1,247 @@
+@font-face{
+   font-family: HelveticaLight;
+   src: url("/view/fonts/HelveticaLight.ttf");
+}
+
+@font-face{
+   font-family: HelveticaRegular;
+   src: url("/view/fonts/HelveticaRegular.ttf");
+}
+
+@font-face{
+   font-family: HelveticaBold;
+   src: url("/view/fonts/HelveticaBold.ttf");
+}
+
+body{
+	margin: 0;
+	background-color: #f5f5f5;
+}
+
+.header{
+	width: 100%;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+.header_wrapper{
+	position: relative;
+	width: 980px;
+	height: 100%;
+	margin: 0 auto;
+}
+.header_block{
+	vertical-align: top;
+	height: 60px;
+	display: inline-block;
+}
+.header_block ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.header_block .logo{
+	width: 78px;
+}
+.header_block .btn_profile{
+	width: 189px;
+}
+.header_block .btn_movie{
+	width: 106px;
+}
+.header_block .btn_music{
+	width: 120px;
+}
+.header_block .btn_travel{
+	width: 152px;
+}
+.header_block .btn_games{
+	width: 180px;
+}
+.header_block .btn_exit{
+	width: 66px;
+}
+
+
+.btn_search{
+	width: 61px;
+	height: 60px;
+	background-color: #6cbfe5;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	float: right;
+}
+.btn_search img{
+	height: 19px;
+	margin-top: 20px;
+	margin-left: 22px;
+}
+.btn_search:hover{
+	cursor: pointer;
+}
+
+
+.header_block a li{
+	display: inline-block;
+	border-right: 1px solid #e5e5e5;
+	box-sizing: border-box;
+	height: 60px;
+	vertical-align: top;
+	margin-right: -5px;
+}
+
+.header_block ul a li:nth-of-type(1){
+	border: 0;
+}
+.header_block ul a li:first-child{
+	border-left: 1px solid #e5e5e5;
+}
+.header_block ul a:nth-of-type(6) li {
+	margin-right: 25px;
+}
+
+.header_block ul a li img{
+	display: inline-block;
+	margin-top: 17px;
+	margin-left: 15px;
+}
+.header_block ul a .btn_profile img{
+	width: 38px;
+	height: 38px;
+	border-radius: 19px;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+.header_block ul a .btn_exit img{
+	margin-left: 21px;
+	margin-top: 18px;
+	width: 25px;
+}
+.header_block a .logo img{
+	margin: 0 auto;
+	margin-top: 5px;
+    margin-left: 15px;
+}
+.header_block ul a .btn_profile:hover{
+	background-color: #00c0e7;
+	color: white;
+}
+.header_block ul a .btn_movie:hover{
+	background-color: #00c0e7;
+	color: white;
+}
+.header_block ul a .btn_music:hover{
+	background-color: #00c0e7;
+	color: white;
+}
+.header_block ul a .btn_travel:hover{
+	background-color: #00c0e7;
+	color: white;
+}
+.header_block ul a .btn_games:hover{
+	background-color: #00c0e7;
+	color: white;
+}
+.header_block ul a .btn_exit:hover{
+	background-color: #E04B57;
+	color: white;
+}
+
+
+.header_block ul a{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+
+.header_block ul li p{
+	display: inline-block;
+	margin: 0;
+	vertical-align: top;
+	margin-top: 22px;
+	font-size: 13px;
+	margin-left: 10px;
+	font-family: HelveticaLight;
+}
+
+.header_block form{
+	display: inline-block;
+}
+
+.search{
+	width: 919px;
+	display: block;
+	border: none;
+	height: 60px;
+	background-color: #6cbfe5;
+	color: #fff;
+	font-family: HelveticaRegular;
+	font-size: 15px;
+	padding-left: 20px;
+}
+
+.search::-webkit-input-placeholder {
+	color:#fff;
+	font-style: italic;
+}
+
+.search_block{
+	height: 60px;
+	//background-color: #6cbfe5;
+}
+
+input[type="checkbox"].check:checked ~ .search_input{
+	display: block;
+	width: 919px;
+}
+#search_check{
+	display: none;
+}
+.search_input{
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 60px;
+	right: 60px;
+	background-color: #6cbfe5;
+	transition: all 0.2s linear;
+	overflow: hidden;
+}
+
+.popup_block{
+	width: 100%;
+	height: 57px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	display: none;
+}
+.popup_wrapper{
+	margin: 0 auto;
+	min-width: 100px;
+	max-width: 980px;
+	text-align: center;
+}
+.popup_okay{
+	background-color: rgba(46, 204, 113, 1);
+}
+.popup_error{
+	background-color: #e74c3c;
+}
+.popup_text{
+	color: white;
+	font-family: HelveticaNeueCyr;
+	font-size: 14px;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}

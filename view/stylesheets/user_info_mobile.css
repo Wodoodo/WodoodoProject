@@ -1,0 +1,353 @@
+/*.user_information_min{
+    width: 100%;
+    overflow: hidden;
+}
+.user_photo_min{
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+.user_photo_min > img{
+    max-width: 100%;
+    margin-top: -25%;
+}
+.full_information_min{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    background-color: #1a1a1a;
+    padding: 20px;
+}
+.full_information_min > p.username, .full_information_min > p.userplace, .full_information_min > p.userabout{
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 21px;
+    color: white;
+    font-family: HelveticaRegular;
+}
+.full_information_min > p.userplace{
+    font-size: 17px;
+    margin-top: 5px;
+}
+.full_information_min > p.userabout{
+    font-size: 15px;
+    margin-top: 30px;
+}
+.full_information_min > b, .full_information_min > p > b{
+    font-family: HelveticaBold;
+}*/
+.user_information_min{
+    width: 980px !important;
+    margin: 0 auto;
+}
+.user_information_min > div{
+    display: inline-block;
+    vertical-align: top;
+}
+.user_photo_min {
+    width: 350px !important;
+    height: 350px;
+    overflow: hidden;
+}
+.full_information_min{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 630px !important;
+    background-color: #1a1a1a;
+    color: white;
+    margin-left: -4px;
+    height: 350px;
+    font-family: HelveticaRegular;
+    padding: 15px;
+    padding-left: 25px;
+}
+.full_information_min > p.username{
+    padding: 0 !important;
+    margin: 0 !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 10px !important;
+    display: inline-block;
+    vertical-align: top;
+}
+.full_information_min > p.userstatus{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 25px !important;
+}
+.user_photo_min > img{
+    width: 100%;
+    height: 100%;
+}
+.full_information_min > table{
+    margin: 0;
+    padding: 0;
+    margin-left: -2px;
+}
+.full_information_min > p:nth-of-type(4){
+    display: none;
+}
+.full_information_min > table > tbody > tr > td{
+    font-family: HelveticeRegular;
+    color: white;
+}
+.full_information_min > table > tbody > tr > td:nth-of-type(2n+1){
+    font-family: HelveticaRegular;
+    font-size: 14px;
+}
+.full_information_min > table > tbody > tr > td:nth-of-type(2n+2){
+    color: #00c0e7;
+    font-size: 14px;
+    font-family: HelveticaRegular;
+    padding-left: 30px;
+}
+.full_information_min > table > tbody > tr > td{
+    padding-bottom: 10px;
+}
+.full_information_min > table > tbody > tr:nth-of-type(2){
+    display: none;
+}
+
+.buttons_action_min{
+    width: 351px;
+    height: 80px;
+}
+.buttons_action_min  div{
+    padding-top: 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100% !important;
+    margin-right: 0 !important;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.buttons_action_min a{
+    width: 50%;
+    margin-right: -5px;
+}
+.buttons_module_min{
+    width: 629px;
+    margin-left: -4px;
+    background-color: white;
+    height: 80px;
+}
+.buttons_module_min > ul{
+    margin: 0;
+    padding: 0;
+    margin-left: -1px;
+}
+.buttons_module_min > ul > a > li{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+    width: 25.15%;
+    height: 80px;
+    color: #1a1a1a;
+    margin-left: -.36em;
+}
+.buttons_module_min > ul > a:first-child > li{
+    margin-left: 0px !important;
+}
+.buttons_module_min > ul > a > li{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    font-family: HelveticaRegular;
+    font-size: 15px;
+    padding-left: 30px;
+}
+.buttons_module_min > ul > a > li > p:nth-child(1){
+    margin-bottom: 5px;
+}
+.buttons_module_min > ul > a > li > p:nth-child(2){
+    font-size: 30px;
+}
+.buttons_module_min > ul > a:last-child > li{
+    border-right: none !important;
+}
+.buttons_module_min > ul > a > li > p:nth-child(2){
+    margin-top: 0;
+    padding-top: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px){
+    .user_information_min{
+        width: 768px !important;
+    }
+    .user_photo_min{
+        width: 250px !important;
+        height: 250px !important;
+    }
+    .full_information_min{
+        width: 518px !important;
+        height: 250px !important;
+    }
+    .full_information_min > table > tbody > tr:last-child{
+        display: none;
+    }
+    .full_information_min > p.userplace{
+        margin-bottom: 8px;
+    }
+    .buttons_action_min{
+        width: 251px !important;
+    }
+    .buttons_action_min > div{
+        padding-top: 25px;
+    }
+    .buttons_module_min{
+        width: 517px !important;
+    }
+}
+
+@media only screen and (min-width: 648px) and (max-width: 768px){
+    .user_information_min{
+        width: 648px !important;
+    }
+    .user_photo_min{
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .full_information_min{
+        width: 448px !important;
+        height: 200px !important;
+    }
+    .full_information_min > table > tbody > tr:last-child{
+        display: none;
+    }
+    .full_information_min > p.userplace{
+        margin-bottom: 8px;
+    }
+
+    .full_information_min > table > tbody > tr:nth-of-type(2){
+        display: table-row;
+    }
+    .full_information_min > table > tbody > tr:nth-of-type(n+3){
+        display: none;
+    }
+    .buttons_action_min{
+        width: 202px !important;
+        height: 60px;
+        font-size: 13px;
+    }
+    .buttons_action_min > div{
+        padding-top: 15px;
+        height: 60px;
+    }
+    .buttons_module_min{
+        width: 446px;
+        height: 60px;
+    }
+    .buttons_module_min > ul{
+        height: 60px !important;
+    }
+    .buttons_module_min > ul > a > li{
+        height: 60px;
+    }
+    .buttons_module_min > ul > a > li > p:nth-child(1) {
+        margin-top: 10px !important;
+    }
+    .buttons_module_min > ul > a > li > p:nth-child(2){
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .buttons_action_min div {
+        padding-top: 15px !important;
+        height: 60px !important;
+    }
+    .buttons_action_min a{
+        height: 60px !important;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 648px){
+    .user_information_min{
+        width: 480px !important;
+    }
+    .user_photo_min{
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .full_information_min{
+        width: 328px !important;
+        height: 150px !important;
+    }
+    .full_information_min > table > tbody > tr:last-child{
+        display: none;
+    }
+    .full_information_min > p.userplace{
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    .full_information_min > p.username{
+        font-size: 14px;
+        margin-bottom: 0px !important;
+        padding-bottom: 5px !important;
+    }
+    .full_information_min > p.userstatus{
+        margin-right: 0px !important;
+        font-size: 13px;
+        margin-top: 9px !important;
+    }
+    .full_information_min > table > tbody > tr:nth-of-type(2){
+        display: table-row;
+    }
+    .full_information_min > table > tbody > tr:nth-of-type(n+3){
+        display: none;
+    }
+    .buttons_action_min{
+        width: 479px;
+    }
+    .buttons_action_min > div:nth-child(2){
+        background-color: #0068a8;
+    }
+    .buttons_module_min{
+        width: 478px;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .user_information_min{
+        width: 100% !important;
+    }
+    .user_photo_min{
+        width: 100% !important;
+        height: 200px;
+    }
+    .user_photo_min > img{
+        margin-top: -25%;
+        height: auto !important;
+    }
+    .full_information_min{
+        width: 100% !important;
+        margin-left: 0px !important;
+    }
+    p.userstatus{
+        margin-top: 8px !important;
+    }
+    .buttons_action_min{
+        width: 100%;
+    }
+    .buttons_action_min > div:nth-child(2){
+        background-color: #0068a8;
+    }
+    .buttons_module_min{
+        width: 100%;
+        margin-left: 0;
+    }
+    .buttons_module_min > ul > a > li{
+        padding-left: 15px;
+    }
+}

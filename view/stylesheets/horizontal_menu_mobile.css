@@ -1,0 +1,9 @@
+@media only screen and (max-width: 980px){
+    .horizontal_menu_wrapper{
+        width: 100% !important;
+        min-width: 315px;
+    }
+    .horizontal_menu_wrapper > ul.horizontal_menu_tabs > a:nth-of-type(n+3) > li{
+        display: none;
+    }
+}
