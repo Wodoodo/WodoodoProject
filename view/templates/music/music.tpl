@@ -1,6 +1,7 @@
 <script type="text/javascript" src="/view/javascripts/jquerysession.js"></script>
 <script type="text/javascript" src="/view/javascripts/audio/audioPlayer.js"></script>
 <script type="text/javascript" src="/view/javascripts/music/addNewMusic.js"></script>
+<script type="text/javascript" src="/view/javascripts/music/searchGenres.js"></script>
 <div class="music_wrapper">
     <div class="audio_player_block">
     <div class="album_photo">
@@ -43,15 +44,13 @@
 	<div class="genre_menu">
         <button class="add_music">Добавить песню</button>
 		<p class="menu_title">ЖАНРЫ</p>
-		<a href="">Все жанры</a>
-		<a href="">Rock</a>
-		<a href="">Pop</a>
-		<a href="">Rap & Hip-Hop</a>
-		<a href="">House & Dance</a>
-		<a href="">Alternative</a>
-		<a href="">Instrumental</a>
-		<a href="">Metal</a>
-		<a href="">Reggae</a>
+        <input type="text" name="genre_search" maxlength="50" placeholder="Поиск по жанрам..." class="genre_search">
+        <a href="/services/music">Все жанры</a>
+        <div class="genre_list">
+        <?php for ($i = 0; $i < $genreList->num_rows; $i++) { ?>
+        <a href="/services/music?genre_id=<?php echo $genreList->rows[$i]['id']; ?>"><?php echo $genreList->rows[$i]['genre_name']; ?></a>
+        <?php } ?>
+        </div>
 	</div>
 	<div class="right_wrapper">
         <div class="user_audio_list_block">
@@ -62,8 +61,9 @@
             $getid3 = new getID3();
             $getid3->encoding = 'UTF-8';
             $getid3->Analyze($_SERVER['DOCUMENT_ROOT'] . '/view/audio/' . $songList->rows[$i]['song_path']);
+            //var_dump($getid3->info['tags']['id3v1']);
         ?>
-        	<div class="user_audio_block" path="<?php echo $getid3->info['filenamepath']; ?>">
+            <div class="user_audio_block" path="<?php echo $getid3->info['filenamepath']; ?>">
                 <div class="user_audio_photo_block">
                     <img src="/view/images/audio/<?php echo $songList->rows[$i]['song_picture']; ?>">
                 </div>

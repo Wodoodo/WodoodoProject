@@ -1,13 +1,18 @@
 <?php 
 	class ModelServicesMusic extends Model{
 		public function getAudioList($genreId){
-			$query = "SELECT * FROM `genres` ";
-			$genreId = $this->db->escape($genreId);
-			$query .= "LEFT JOIN `audio` ON `audio`.`genre_id` = `genres`.`id` ";
-			if($genreId != 0)
+			if($genreId != 0){
+				$query = "SELECT * FROM `genres` ";
+				$genreId = $this->db->escape($genreId);
+				$query .= "LEFT JOIN `audio` ON `audio`.`genre_id` = `genres`.`id` ";
 				$query .= "WHERE `genres`.`id` = '$genreId'";
-			$userAudio = $this->db->query($query);
-			return $userAudio;
+				$userAudio = $this->db->query($query);
+				return $userAudio;
+			} else {
+				$query = "SELECT * FROM `audio`";
+				$userAudio = $this->db->query($query);
+				return $userAudio;
+			}
 		}
 
 		public function getGenres(){

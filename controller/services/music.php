@@ -45,7 +45,7 @@
 					$userIsset = $this->db->query("SELECT * FROM `users` WHERE `user_hash` = '$userHash'");
 					if ($userIsset->num_rows == 1){
 						$userId = $userIsset->row['user_id'];
-						$query = "SELECT * FROM `genres` WHERE `genre_name` LIKE '%$info[genre]%'";
+						$query = "SELECT * FROM `genres` WHERE `genre_name` LIKE '$info[genre]'";
 						$genre = $this->db->query($query);
 						if ($genre->num_rows > 0){
 							$genre = $genre->row['id'];
@@ -81,20 +81,22 @@
 			include_once($_SERVER['DOCUMENT_ROOT'] . '/view/javascripts/audio/getid3/module.audio.mp3.php');
 			$getid3 = new getID3();
 			$getid3->encoding = 'UTF-8';
+			//$getid3->encoding_id3v1 = 'CP1251';
 			$getid3->Analyze($data);
 			$fileName = preg_replace("/\.mp3$/", "", $getid3->info['filename']);
 			$file =  $fileName . '.jpg';
+			$length = $getid3->info['comments']['picture'][0]['datalength'];
 			$text = $getid3->info['comments']['picture'][0]['data'];
-			if (strlen($text > 0)){
+			if ($length > 0){
 				$filePath = $_SERVER['DOCUMENT_ROOT'] . '/view/images/audio/' . $file;
 				file_put_contents($filePath, $text);
 				$return['image_path'] = $file;
 			} else {
 				$return['image_path'] = 'nophoto.jpg';
 			}
-			$return['artist'] = $getid3->info['tags']['id3v1']['artist'][0];
-			$return['name'] = $getid3->info['tags']['id3v1']['title'][0];
-			$return['genre'] = $getid3->info['tags']['id3v1']['genre'][0];
+			$return['artist'] = $getid3->info['tags']['id3v2']['artist'][0];
+			$return['name'] = $getid3->info['tags']['id3v2']['title'][0];
+			$return['genre'] = $getid3->info['tags']['id3v2']['genre'][0];
 			return $return;
 		}
 
