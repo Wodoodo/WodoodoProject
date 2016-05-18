@@ -1,6 +1,7 @@
 <?php 
 	class ControllerServicesMusic extends Controller{
 		public function index(){
+
 			include_once($_SERVER['DOCUMENT_ROOT'] . '/view/javascripts/audio/getid3/getid3.php');
 			include_once($_SERVER['DOCUMENT_ROOT'] . '/view/javascripts/audio/getid3/module.audio.mp3.php');
 			include_once($_SERVER['DOCUMENT_ROOT'] . '/view/javascripts/audio/getid3/module.audio.wavpack.php');
@@ -16,6 +17,7 @@
 			}
 
 			$data['songList'] = $this->model_services_music->getAudioList($genreId);
+			$data['genreList'] = $this->model_services_music->getGenres();
 
 			$this->load->view('music/music', $data);
 		}
@@ -43,7 +45,7 @@
 					$userIsset = $this->db->query("SELECT * FROM `users` WHERE `user_hash` = '$userHash'");
 					if ($userIsset->num_rows == 1){
 						$userId = $userIsset->row['user_id'];
-						$query = "SELECT * FROM `genres` WHERE `id` = '$info[genre]'";
+						$query = "SELECT * FROM `genres` WHERE `genre_name` LIKE '%$info[genre]%'";
 						$genre = $this->db->query($query);
 						if ($genre->num_rows > 0){
 							$genre = $genre->row['id'];
@@ -92,8 +94,21 @@
 			}
 			$return['artist'] = $getid3->info['tags']['id3v1']['artist'][0];
 			$return['name'] = $getid3->info['tags']['id3v1']['title'][0];
-			$return['genre'] = $getid3->info['comments']['id3v1']['genre'][0];
+			$return['genre'] = $getid3->info['tags']['id3v1']['genre'][0];
 			return $return;
+		}
+
+		public function searchGenres(){
+			if (isset($_POST['search'])){
+				$result = array();
+				$this->load->model('services/music');
+				$result['genre'] = $this->model_services_music->searchGenres($_POST['value']);
+				echo json_encode($result);
+				die();
+			} else {
+				ob_end_clean();
+				exit(header("Location: /services/music"));
+			}
 		}
 	}
 ?>

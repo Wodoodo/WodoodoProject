@@ -9,5 +9,19 @@
 			$userAudio = $this->db->query($query);
 			return $userAudio;
 		}
+
+		public function getGenres(){
+			$query = "SELECT * FROM `genres`";
+			$result = $this->db->query($query);
+			return $result;
+		}
+
+		public function searchGenres($value){
+			$value = $this->db->escape($value);
+			$query = "SELECT * FROM `genres` WHERE `genre_name` LIKE '%$value%'";
+			$result = $this->db->query($query);
+
+			return $result;
+		}
 	}
 ?>
