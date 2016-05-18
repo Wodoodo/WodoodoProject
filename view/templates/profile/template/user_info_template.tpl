@@ -32,7 +32,7 @@
                         <?php echo $btn_text; ?>
                     </div>
                 </a>
-                <a href="/messages/view">
+                <a href="/messages/dialogues/newDialog?companion_id=<?php echo $_GET['id']; ?>">
                     <div class="button send_message">
                         Написать<br>сообщение
                     </div>

@@ -154,6 +154,8 @@
 
             $this->db->query($query); */
 
+            $messages->row['my_user_id'] = $userId;
+
             return $messages;
         }
 	}

@@ -27,6 +27,18 @@
 			}
 		}
 
-
+		public function newDialog(){
+			if (isset($_GET['companion_id'])) {
+				$this->load->model('messages/messages');
+				$result = $this->model_messages_messages->newDialog($_GET['companion_id']);
+				if ($result['status'] == 'okay'){
+					ob_end_clean();
+					exit(header("Location: /messages/view?id=" . $result['conversation_id']));
+				}
+			} else {
+				ob_end_clean();
+				exit(header("Location: /messages/dialogues"));
+			}
+		}
 	}
 ?>

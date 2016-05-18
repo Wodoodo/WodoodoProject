@@ -73,5 +73,39 @@
 
 			return $result;
 		}
+
+		public function newDialog($companionId){
+			$companionId = $this->db->escape($companionId);
+			$userHash = $this->db->escape($_SESSION['USER']);
+			$userId = $this->db->query("SELECT * FROM `users` WHERE `user_hash` = '$userHash'");
+			if ($userId->num_rows == 1){
+				$userId = $userId->row['user_id'];
+			}
+
+			$query = "SELECT * FROM `conversations` ";
+			$query .= "WHERE `users` LIKE '%\"$userId\"%' AND `users` LIKE '%\"$companionId\"%'";
+
+			$convIsset = $this->db->query($query);
+			if ($convIsset->num_rows == 1){
+				$result['status'] = 'okay';
+				$result['conversation_id'] = $convIsset->row['id'];
+			} else {
+				$usersArray = array();
+				$usersArray['users'] = array();
+				array_push($usersArray['users'], $userId);
+				array_push($usersArray['users'], $companionId);
+				$usersArray = json_encode($usersArray);
+
+				$query = "INSERT INTO `conversations` ";
+				$query .= "(users) VALUES ('$usersArray')";
+
+				$this->db->query($query);
+
+				$result['status'] = 'okay';
+				$result['conversation_id'] = $this->db->getLastId();
+			}
+
+			return $result;
+		}
 	}
 ?>

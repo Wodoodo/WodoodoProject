@@ -130,7 +130,12 @@ p.have_post{
 	display: block;
 }
 .player .user_audio_track_name{
-	padding-top: 10px;
+	padding-top: 5px;
+	font-size: 22px;
+}
+.player .user_audio_performer_name{
+	margin-bottom: 5px;
+	font-size: 26px;
 }
 
 .time_bar{

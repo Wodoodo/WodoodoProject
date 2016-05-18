@@ -30,7 +30,7 @@
 										href="/profile/user?id=<?php echo $userFriends->rows[$i]['id']; ?>"><b><?php echo $userFriends->rows[$i]['user_name']; ?></b></a></p>
 							<p class="user_friend_add_info"><?php echo $userFriends->rows[$i]['city'] . $userFriends->rows[$i]['fullYears']; ?></p>
 							<div class="btn_send_message">
-								<a href="/messages/view"><p>Отправить сообщение</p></a>
+								<a href="/messages/dialogues/newDialog?companion_id=<?php echo $userFriends->rows[$i]['id']; ?>"><p>Отправить сообщение</p></a>
 								<?php 
 									if($user_id == $id){ ?>
 										<a href="/profile/user/deleteFriend?user=<?php echo $userFriends->rows[$i]['userId']; ?>&friend=<?php echo $userFriends->rows[$i]['id']; ?>"><p>Удалить из друзей</p></a>

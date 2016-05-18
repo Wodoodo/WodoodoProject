@@ -59,9 +59,9 @@
 						<img src="/view/images/audio/<?php echo $songList->rows[$i]['song_picture']; ?>">
 					</div>
 					<div class="user_audio_info">
-						<p class="user_audio_performer_name"><b><?php echo (strcmp($getid3->info['fileformat'], "wav") == 0) ? $getid3->info['tags']['riff']['artist'][0] :  $getid3->info['tags']['id3v1']['artist'][0]; ?></b></p>
-						<p class="user_audio_track_name"><?php echo (strcmp($getid3->info['fileformat'], "wav") == 0) ? $getid3->info['tags']['riff']['title'][0] :  $getid3->info['tags']['id3v1']['title'][0]; ?></p>
-						<p class="user_audio_time"><?php echo $getid3->info['playtime_string']; ?></p>
+						<p class="user_audio_performer_name"><b><?php echo $songList->rows[$i]['song_author']; ?></b></p>
+	                    <p class="user_audio_track_name"><?php echo $songList->rows[$i]['song_name']; ?></p>
+	                    <p class="user_audio_time"><?php echo $getid3->info['playtime_string']; ?></p>
 					</div>
 					<div class="audio_play_btn" songnumber="<?php echo $i; ?>">
 						<img src="/view/images/play_mini.png" class="user_play_button">

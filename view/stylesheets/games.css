@@ -1,0 +1,8 @@
+body{
+    background-image: url('/view/images/cinema_back.jpg');
+}
+.horizontal_menu{
+    position: relative;
+    background-color: rgba(0,0,0,0.5) !important;
+    z-index: 5500;
+}

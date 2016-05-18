@@ -626,7 +626,7 @@ input[type="checkbox"].check_comments:checked ~ .comments_block{
 	margin: 30px auto;
 	width: 85%;
 	height: 90%;
-	background-color: #1e1e1e;
+	/*background-color: #1e1e1e;*/
 }
 .photo_slider_image{
 	width: 100%;
