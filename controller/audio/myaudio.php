@@ -13,18 +13,20 @@
                 if (isset($_SESSION['USER'])) {
 
                     $userInfo = $this->model_profile_user->getUser();
+                    $data['isMyPage'] = true;
                 } else {
                     ob_end_clean();
                     exit(header("Location: /profile/sign/signin"));
                 }
             } else {
                 $userInfo = $this->model_profile_user->getUserFromID();
+                $data['isMyPage'] = false;
             }
 
             $this->load->model('audio/audio');
 
 			$data['songList'] = $this->model_audio_audio->getAudioList($userInfo->row['user_id']);
-			//$this->saveMusicPhoto($data);
+			$this->saveMusicPhoto($data);
 
             $this->load->view('audio/audio', $data);
 		}
