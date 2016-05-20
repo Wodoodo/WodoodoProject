@@ -11,85 +11,6 @@ body{
     height: auto;
     margin: 0 auto;
 }
-.film_slider{
-    position: relative;
-    width: 100%;
-    height: 455px;
-    overflow: hidden;
-    margin-top: -57px;
-    z-index: 5000;
-    text-align: center;
-}
-.film_slider > ul{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
-}
-.film_slider > ul > li{
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-    background-size: cover;
-}
-.film_slider > ul > li > img{
-    max-width: 100%;
-}
-.film_slider > ul > li > .slider_description{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-}
-.slider_description > a{
-    text-decoration: none;
-    color: inherit;
-}
-.slider_description > a:hover{
-    text-decoration: underline;
-    color: white;
-}
-.slider_description > a > p.film_name, .slider_description > p.film_date{
-    color: white;
-    font-family: Verdana;
-    font-weight: bold;
-    font-size: 35px;
-    text-align: center;
-    margin-top: 350px;
-}
-.slider_description > a > p.film_name{
-    margin-bottom: 20px;
-}
-.slider_description > p.film_date{
-    font-weight: 300 !important;
-    font-size: 13px;
-    margin-top: 0;
-}
-ul.options > li{
-    display: inline-block;
-    vertical-align: top;
-    color: white;
-    font-family: Verdana;
-    font-size: 13px;
-}
-ul.options > li > select{
-    background-color: #373d47;
-    cursor: pointer;
-    color: white;
-    border: none;
-}
-ul.options > li > select:focus{
-    outline: none;
-}
-ul.options > li > select > option{
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-}
 
 
 
@@ -97,91 +18,78 @@ ul.options > li > select > option{
     color: white;
     font-family: Verdana;
     font-weight: bold;
-    font-size: 17px;
-    margin-left: 40px;
+    font-size: 25px;
 }
 .tickets_wrapper{
     width: 100%;
 }
-.ticket_block{
-    width: 475px;
-    height: 190px;
-    display: inline-block;
-    margin-right: 13px;
-    margin-bottom: 20px;
-    border-radius: 14px;
-    background-color: #f2f2f2;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.film_photo_block{
-    width: 65%;
-    height: 100%;
-    display: inline-block;  
-    background-position: center;
-    border-radius: 14px 0 0 14px;
-    background-size: auto 100%;
-    background-position: center;
-    position: relative;
-    cursor: pointer;
-}
-.back_block{
+.genre_wrapper{
     width: 100%;
-    height: 100%;
-    border-radius: 14px 0 0 14px;
-    background-color: rgba(0,0,0,0.3);
-    position: absolute;
 }
-.ticket_film_name{
+.genre_block{
+    width: auto;
+    height: 26px;
     color: white;
     font-family: Verdana;
-    font-size: 17px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0;
-    margin-top: 141px;
-}
-.ticket_info_block{
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 5px;
     display: inline-block;
-    width: 35%;
-    height: 100%;
-    text-align: center;
-    float: right;
-}
-.ticket_info_block img{
-    width: 75px;
-}
-.ticket_info_block a{
+    margin-right: 10px;
+    margin-bottom: 10px;
     text-decoration: none;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
 }
-.ticket_info_block a:hover{
+.genre_block:hover{
+    background-color: white;
+    color: black; 
+}
+.tickets_wrapper > a{
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 42px;
+    margin-bottom: 25px;
+    vertical-align: top;
+}
+.tickets_wrapper > a > .film_block:hover .film_genre, 
+.tickets_wrapper > a > .film_block:hover .last_date,
+.tickets_wrapper > a > .film_block:hover .film_name{
     text-decoration: underline;
-    color: #2c3343;
 }
-.ticket_price{
-    margin: 0;
+.tickets_wrapper > a > .film_block:hover .film_photo_block img{
+    opacity: 0.85;
+}
+.film_block{
+    width: 200px;
+    height: auto;
+}
+.film_photo_block{
+    width: 100%;
+    max-height: 400px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.film_photo_block img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.film_info_block{
+    width: 100%;
+    height: auto;
+    color: white;
     font-family: Verdana;
-    font-weight: bold;
+    font-size: 12px;
+}
+.film_genre, .last_date, .film_name{
+    margin: 0;
+    margin-top: 2px;
+}
+.film_name{
     font-size: 15px;
-    margin-bottom: 15px;
-    color: #2c3343;
-}
-.buy_btn{
-    margin: 0;
-    font-family: Verdana;
-    font-weight: bold;
-    font-size: 15px;
-    color: #2c3343;
-    margin-top: 15px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-.ticket_film_date{
-    margin: 0;
-    margin-top: 45px;
-    font-family: Verdana;
-    font-weight: bold;
-    font-size: 11px;
-    color: #2c3343;
+    font-weight: bolder;
 }
 
 
@@ -192,6 +100,12 @@ ul.options > li > select > option{
     height: auto;
     margin: 0 auto;
     padding: 0;
+}
+.film_title{
+    font-family: Verdana;
+    font-size: 28px;
+    color: white;
+    font-weight: bolder;
 }
 .film_info{
     width: 100%;
@@ -266,6 +180,10 @@ ul.options > li > select > option{
 .producer_block{
     width: 100%;
     height: 100%;
+    font-size: 13px;
+    font-family: Tahoma;
+    color: white;
+    margin: 0;
 }
 .trailer_block{
     width: 100%;
@@ -280,6 +198,62 @@ ul.options > li > select > option{
     width: 30%;
     height: 80%;
     margin-right: 20px;
+}
+.users_wrapper{
+    width: 100%;
+    height: 200px;
+}
+.users_wrapper > .title_block_name{
+    display: inline-block;
+    margin-right: 25px;
+}
+.show_all_users_btn{
+    display: inline-block;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+}
+.show_all_users_btn:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.users_block{
+    width: 100%;
+    height: auto;
+}
+.user_block{
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 40px;
+}
+.user_block:hover a{
+    text-decoration: underline;
+}
+.user_block:hover .user_photo_block img{
+    opacity: 0.85;
+}
+.user_block a{
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    font-size: 13px;
+}
+.user_photo_block{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    margin: 10px auto;
+}
+.user_photo_block img{
+    width: 100%;
+    height: 100%;
+    border-radius: 80px;
+}
+.user_name{
+    text-align: center;
+    margin: 0;
 }
 .comments_wrapper{
     width: 100%;

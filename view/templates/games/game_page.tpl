@@ -1,6 +1,6 @@
-<div class="film_info_wrapper">
-    <p class="film_title"><?php echo $film['name']; ?></p>
-    <div class="film_info">
+<div class="games_info_wrapper">
+    <p class="games_title">The Witcher 3: Wild Hunt</p>
+    <div class="games_info">
         <ul class="const_info_list">
             <li>Жанр</li>
             <li>Год</li>
@@ -15,17 +15,17 @@
             <li>США</li>
             <li>114 минут</li>
             <li style="color: red;">33%</li>
-            <li>16+</li>
+            <li>18+</li>
         </ul>
     </div>
-    <div class="about_film_block">
-        <div class="film_picture_block">
-            <img src="<?php echo $film['photo']; ?>">
+    <div class="about_games_block">
+        <div class="games_picture_block">
+            <img src="/view/images/games/witcher.jpg">
         </div>
-        <div class="about_film">
+        <div class="about_games">
             <div class="description_block">
                 <p class="title_block_name" style="margin-top: 0;">Описание</p>
-                <p class="text_block"><?php echo $film['text']; ?></p>
+                <p class="text_block">Когда любовь уходит, сердце прекрасной девы образется в лед. И даже сотни королевств не смогут сдержать поступь ее несметного воинства. Лишь Охотник не ведает страха. Сквозь проклятый лес он идет навстречу своей судьбе.</p>
             </div>
             <div class="role_block">
                 <p class="title_block_name">В ролях</p>
@@ -38,20 +38,17 @@
         </div>
     </div>
     <div class="trailer_block">
-        <p class="title_block_name">Трейлер к фильму</p>
+        <p class="title_block_name">Трейлер к игре</p>
         <video></video>
     </div>
-    <div class="picture_film_block">
-        <p class="title_block_name">Кадры фильма</p>
+    <div class="picture_games_block">
+        <p class="title_block_name">Кадры из игры</p>
         <img src="">
         <img src="">
         <img src="">
     </div>
-    <!--<div class="info_ticket_block">
-         <p class="title_block_name">Купить билеты</p>
-    </div>-->
     <div class="users_wrapper">
-         <p class="title_block_name">Хотят сходить на этот фильм</p>
+         <p class="title_block_name">Играют</p>
          <div class="show_all_users_btn">показать всех</div>
          <div class="users_block">
              <div class="user_block">
