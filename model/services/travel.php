@@ -79,12 +79,12 @@
 			$travelDesc = htmlspecialchars($_POST['travel_desc']);
 
 			$query = "INSERT INTO `travel` ";
-			$query .= "(travel_user, travel_from, travel_to, travel_type, travel_desc";
+			$query .= "(travel_user, travel_from, travel_to, travel_type, travel_desc, ";
 			if ($type == 2){
 				$query .= "travel_auto, travel_all_place, travel_free_place, ";
 			}
 			$query .= "travel_time, travel_date_create) ";
-			$query .= "VALUES ('$userId', '$_POST[from]', '$_POST[to]', '$type', '$travelDesc' ";
+			$query .= "VALUES ('$userId', '$_POST[from]', '$_POST[to]', '$type', '$travelDesc', ";
 			if ($type == 2){
 				$query .= "'$_POST[auto]', '$_POST[all_place]', '$_POST[free_place]', ";
 			}
@@ -103,6 +103,41 @@
 			$result = $this->db->query($query);
 
 			return $result;
+		}
+
+		public function addResponse($travelID){
+			ob_start();
+			$this->load->model('messages/messages');
+			$this->load->model('profile/user');
+
+			$user = $this->model_profile_user->getUser();
+			$userId = $user->row['user_id'];
+
+			$travelID = $this->db->escape($travelID);
+
+			$query = "SELECT * FROM `travel` ";
+			$query .= "JOIN `users` ON `users`.`user_id` = `travel`.`travel_id` ";
+			$query .= "WHERE `travel`.`travel_id` = '$travelID'";
+
+			$travel = $this->db->query($query);
+
+			if ($travel->num_rows > 0){
+				$companionId = $travel->row['travel_user'];
+				$dialog = $this->model_messages_messages->newDialog($companionId);
+				$dialogId = $dialog['conversation_id'];
+				$date = date('Y-m-d H:i:s');
+
+				$messageText = 'Здравствуйте! Я по поводу Вашего предложения - http://wodoodo.vsemhorosho.by/services/travel/view?id=' . $travelID . '. Актуально ли на данный момент?';
+
+				$query = "INSERT INTO `messages` ";
+				$query .= "(user_from, user_to, message_text, viewed, displayed, owner_displayed, conversation, message_date) ";
+				$query .= "VALUES ('$userId', '$companionId', '$messageText', '0', '0', '0', '$dialogId', '$date')";
+
+				$this->db->query($query);
+
+				ob_end_clean();
+				exit(header("Location: /messages/view?id=" . $dialogId));
+			}
 		}
 	}
 ?>

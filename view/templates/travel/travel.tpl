@@ -1,5 +1,4 @@
 <div class="travel_wrapper">
-<<<<<<< HEAD
 	<p class="travel_title">Поиск попутчиков</p>
     <div class="search_form">
         <form action="/services/travel/search" method="POST">
@@ -28,7 +27,7 @@
                 <div class="user_image inline-top"><img src="/view/images/users/<?php echo $travels->rows[$i]['user_photo']; ?>" alt=""></div>
                 <div class="offer_info inline-top">
                     <div class="upper_info">
-                        <div class="offer_whom inline-top"><b>Ищу:</b> <?php echo ($travels->rows[$i]['travel_type'] == 1) ? 'Попутчика' : 'Водителя'; ?></div>
+                        <div class="offer_whom inline-top"><b>Ищу:</b> <?php echo ($travels->rows[$i]['travel_type'] == 1) ? 'Водителя' : 'Попутчика'; ?></div>
                         <div class="offer_path inline-top"><b>Маршрут:</b> <?php echo $travels->rows[$i]['travel_from'] . ' - ' . $travels->rows[$i]['travel_to']; ?></div>
                     </div>
                     <div class="down_info">
@@ -46,7 +45,4 @@
         Предложений не найдено
         <?php } ?>
     </div>
-=======
-	
->>>>>>> 60629290047ef4efe0a2f0b60243d7d2c98df887
 </div>
