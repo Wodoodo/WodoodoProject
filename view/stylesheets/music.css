@@ -255,7 +255,6 @@ body{
     height: auto;
     padding-top: 6px;
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .user_audio_block{
     width: 90%;
@@ -280,7 +279,9 @@ body{
     height: 100%;
     border-radius: 40px;
 }
-.audio_play_btn{
+.audio_play_btn,
+.audio_add_btn,
+.audio_delete_btn{
     width: 25px;
     height: 25px;
     margin-right: 40px;
@@ -289,10 +290,16 @@ body{
     display: inline-block;
     vertical-align: top;
 }
-.audio_play_btn img{
+.audio_play_btn img,
+.audio_add_btn img,
+.audio_delete_btn img{
     width: 100%;
     height: 100%;
     cursor: pointer;
+}
+.audio_add_btn,
+.audio_delete_btn{
+    margin-right: 10px;
 }
 
 .add_music, .add_new_music{
@@ -367,4 +374,38 @@ body{
     padding-left: 15px;
     font-family: HelveticaNeueCyr;
     font-size: 13px;
+}
+input.genre_search{
+    width: 185px;
+    border: none;
+    padding-left: 10px;
+    font-family: HelveticaNeueCyr;
+    font-size: 13px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    height: 30px;
+}
+input.genre_search:focus{
+    outline: none;
+}
+.genre_list > a{
+    text-decoration: none;
+    color: #E1D6D6;
+    margin-left: 15px;
+    font-family: HelveticaRegular;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: block;
+    line-height: 25px;
+}
+.genre_list > a:hover{
+    text-decoration: underline;
+}
+.no_audio{
+    margin-left: 40px;
+    font-family: HelveticaNeueCyr;
+    font-size: 15px;
+    color: white;
 }

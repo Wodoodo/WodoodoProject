@@ -8,6 +8,7 @@
 
 			$this->load->model('services/travel');
 
+<<<<<<< HEAD
 			$travels = $this->model_services_travel->getTravels($_GET);
 
 			$data['travels'] = $travels;
@@ -63,6 +64,9 @@
 			}
 			ob_end_clean();
 			exit(header("Location: /services/travel" . $requestURI));
+=======
+			$this->load->view('travel/travel');
+>>>>>>> 60629290047ef4efe0a2f0b60243d7d2c98df887
 		}
 	}
 ?>

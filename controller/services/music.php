@@ -112,5 +112,51 @@
 				exit(header("Location: /services/music"));
 			}
 		}
+
+		public function deleteMusic(){
+			if (isset($_GET['music_id'])){
+				$this->load->model('services/music');
+				$this->model_services_music->deleteMusic($_GET['music_id']);
+				ob_end_clean();
+				exit(header("Location: " . $_GET['return_page']));
+			} else {
+				ob_end_clean();
+				exit(header("Location: " . $_GET['return_page']));
+			}
+		}
+
+		public function addMusic(){
+			if (isset($_GET['music_id'])){
+				$this->load->model('services/music');
+				$this->model_services_music->addMusic($_GET['music_id']);
+				ob_end_clean();
+				exit(header("Location: " . $_GET['return_page']));
+			} else {
+				ob_end_clean();
+				exit(header("Location: " . $_GET['return_page']));
+			}
+		}
+
+		public function getAudioInfo(){
+			if(isset($_POST['musicId'])){
+				$this->load->model('services/music');
+				$result = $this->model_services_music->getAudioInfo($_POST['musicId']);
+				echo json_encode($result);
+				die();
+			} else {
+				ob_end_clean();
+				exit(header("Location: /profile/myaudio"));
+			}
+		}
+
+		public function updateAudioInfo(){
+			if((isset($_POST['musicId'])) && (isset($_POST['authorName'])) && (isset($_POST['audioName']))){
+				$this->load->model('services/music');
+				$this->model_services_music->updateAudioInfo($_POST['musicId'], $_POST['authorName'], $_POST['audioName']);
+			} else {
+				ob_end_clean();
+				exit(header("Location: /profile/myaudio"));
+			}
+		}
 	}
 ?>

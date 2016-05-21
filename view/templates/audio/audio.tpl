@@ -1,4 +1,5 @@
 <script type="text/javascript" src="/view/javascripts/audio/audioPlayer.js"></script>
+<script type="text/javascript" src="/view/javascripts/audio/editAudio.js"></script>
 <div class="user_audio_wrapper">
 	<p class="block_title">Аудиозаписи</p>
 	<div class="search_audio">
@@ -12,7 +13,7 @@
     	} else { ?>
     		<div class="audio_player_block">
 		    	<div class="album_photo">
-		    		<img src="/view/images/audio/acdc.jpg">
+		    		<img src="/view/images/audio/nophoto.jpg">
 		    	</div>
 		    	<div class="player">
 		    		<div class="player_audio_info">
@@ -63,11 +64,28 @@
 	                    <p class="user_audio_track_name"><?php echo $songList->rows[$i]['song_name']; ?></p>
 	                    <p class="user_audio_time"><?php echo $getid3->info['playtime_string']; ?></p>
 					</div>
-					<div class="audio_play_btn" songnumber="<?php echo $i; ?>">
+					<div class="audio_play_btn" songnumber="<?php echo $i; ?>" title="Воспроизвести">
 						<img src="/view/images/play_mini.png" class="user_play_button">
 					</div>
+					<?php if($isMyPage){ ?>
+						<div class="audio_editing_btn" songid="<?php echo $songList->rows[$i]['song_id']; ?>" title="Изменить">
+							<img src="/view/images/edit.png" class="user_edit_btn">
+						</div>
+						<a class="audio_delete_btn" songnumber="<?php echo $i; ?>" title="Удалить" href="/services/music/deleteMusic?music_id=<?php echo $songList->rows[$i]['id']; ?>&return_page=/audio/myaudio">
+							<img src="/view/images/delete_music.png" class="user_delete_btn">
+						</a>
+					<?php } ?>
 				</div>
 		    <?php }	?>
 		    </div>
     	<?php } ?>
+</div>
+
+<div class="edit_music_popup">
+	<div class="edit_music_window">
+		<label>Исполнитель: </label><input type="text" name="author" id="input_author_name"><br>
+    	<label>Название: </label><input type="text" name="name" id="input_audio_name"><br>
+    	<button id="edit_info">Сохранить</button>
+	</div>
+	<p class="result_edit_music"></p>
 </div>

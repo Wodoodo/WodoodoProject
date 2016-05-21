@@ -1,4 +1,5 @@
 <div class="travel_wrapper">
+<<<<<<< HEAD
 	<p class="travel_title">Поиск попутчиков</p>
     <div class="search_form">
         <form action="/services/travel/search" method="POST">
@@ -45,4 +46,7 @@
         Предложений не найдено
         <?php } ?>
     </div>
+=======
+	
+>>>>>>> 60629290047ef4efe0a2f0b60243d7d2c98df887
 </div>

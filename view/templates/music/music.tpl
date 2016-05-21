@@ -5,7 +5,7 @@
 <div class="music_wrapper">
     <div class="audio_player_block">
     <div class="album_photo">
-        <img src="/view/images/audio/acdc.jpg">
+        <img src="/view/images/audio/nophoto.jpg">
     </div>
     <div class="player">
         <div class="player_audio_info">
@@ -53,31 +53,37 @@
         </div>
 	</div>
 	<div class="right_wrapper">
-        <div class="user_audio_list_block">
-        <?php
-        /*$arr = id3_get_genre_name(0);
-        var_dump($arr);*/
-        for($i = 0; $i < $songList->num_rows; $i++){ 
-            $getid3 = new getID3();
-            $getid3->encoding = 'UTF-8';
-            $getid3->Analyze($_SERVER['DOCUMENT_ROOT'] . '/view/audio/' . $songList->rows[$i]['song_path']);
-            //var_dump($getid3->info['tags']['id3v1']);
-        ?>
-            <div class="user_audio_block" path="<?php echo $getid3->info['filenamepath']; ?>">
-                <div class="user_audio_photo_block">
-                    <img src="/view/images/audio/<?php echo $songList->rows[$i]['song_picture']; ?>">
+        <?php if($songList->rows[0]['genre_id'] == null){ ?>
+            <p class="no_audio">Аудиозаписи данного жанра отсутствуют</p>
+        <?php } else { ?>
+            <div class="user_audio_list_block">
+            <?php
+            for($i = 0; $i < $songList->num_rows; $i++){ 
+                $getid3 = new getID3();
+                $getid3->encoding = 'UTF-8';
+                $getid3->Analyze($_SERVER['DOCUMENT_ROOT'] . '/view/audio/' . $songList->rows[$i]['song_path']);
+                //var_dump($getid3->info['tags']['id3v1']['title']);
+                //var_dump($getid3->info['tags']['id3v2']['title']);
+            ?>
+                <div class="user_audio_block" path="<?php echo $getid3->info['filenamepath']; ?>">
+                    <div class="user_audio_photo_block">
+                        <img src="/view/images/audio/<?php echo $songList->rows[$i]['song_picture']; ?>">
+                    </div>
+                    <div class="user_audio_info">
+                        <p class="user_audio_performer_name"><b><?php echo $songList->rows[$i]['song_author']; ?></b></p>
+                        <p class="user_audio_track_name"><?php echo $songList->rows[$i]['song_name']; ?></p>
+                        <p class="user_audio_time"><?php echo $getid3->info['playtime_string']; ?></p>
+                    </div>
+                    <div class="audio_play_btn" songnumber="<?php echo $i; ?>" title="Воспроизвести">
+                        <img src="/view/images/play_mini.png" class="user_play_button">
+                    </div>
+                    <a class="<?php echo ($songList->rows[$i]['issetInUser']) ? 'audio_delete_btn' : 'audio_add_btn'; ?>" songnumber="<?php echo $i; ?>" title="<?php echo ($songList->rows[$i]['issetInUser']) ? 'Удалить' : 'Добавить'; ?>" href="<?php echo ($songList->rows[$i]['issetInUser']) ? '/services/music/deleteMusic?music_id=' . $songList->rows[$i]['id'] . '&return_page=/services/music' : '/services/music/addMusic?music_id=' . $songList->rows[$i]['id'] . '&return_page=/services/music'; ?>">
+                        <img src="/view/images/<?php echo ($songList->rows[$i]['issetInUser']) ? 'delete_music.png' : 'add_music.png'; ?>" class="<?php echo ($songList->rows[$i]['issetInUser']) ? 'user_delete_btn' : 'user_add_btn'; ?>">
+                    </a>
                 </div>
-                <div class="user_audio_info">
-                    <p class="user_audio_performer_name"><b><?php echo $songList->rows[$i]['song_author']; ?></b></p>
-                    <p class="user_audio_track_name"><?php echo $songList->rows[$i]['song_name']; ?></p>
-                    <p class="user_audio_time"><?php echo $getid3->info['playtime_string']; ?></p>
-                </div>
-                <div class="audio_play_btn" songnumber="<?php echo $i; ?>">
-                    <img src="/view/images/play_mini.png" class="user_play_button">
-                </div>
+            <?php } ?>
             </div>
         <?php } ?>
-        </div>
 	</div>
 </div>
 <div class="add_music_popup">
