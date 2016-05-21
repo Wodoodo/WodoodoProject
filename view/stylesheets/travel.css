@@ -1,8 +1,263 @@
 body{
     background-image: url('/view/images/cinema_back.jpg');
+    overflow-y: scroll;
 }
 .horizontal_menu{
     position: relative;
     background-color: rgba(0,0,0,0.5) !important;
     z-index: 5500;
+}
+.travel_wrapper{
+    width: 980px;
+    margin: 0 auto;
+    font-family: Verdana;
+    color: white;
+}
+.travel_wrapper > p.travel_title{
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 0;
+    padding-left: 15px;
+}
+.search_title{
+    font-size: 14px;
+    margin-right: 10px;
+}
+.search_form{
+    padding: 15px;
+    padding-top: 0px;
+    font-weight: bold;
+}
+.search_form > form > .search_how > input[type="radio"]{
+    display: none;
+}
+.search_form > form > .search_how > input[type="radio"] ~ label, .search_place > input[type="text"]{
+    font-weight: normal;
+    font-size: 13px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.search_form > form > .search_how > input[type="radio"] + label:hover, .search_form > form > .search_how > input[type="radio"]:checked + label{
+    background-color: white;
+    color: #091529;
+}
+.search_how, .search_place{
+    margin-bottom: 20px;
+}
+.search_place > input[type="text"]{
+    cursor: inherit;
+    background-color: transparent;
+    color: white;
+}
+.search_place > input[type="text"]:focus{
+    outline: none;
+}
+.search_form > form > input[type="submit"], .add_travel_offer{
+    width: 100px;
+    height: 25px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: white;
+    color: #091529;
+    border: none;
+    cursor: pointer;
+    font-family: HelveticaNeueCyr;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.add_travel_offer{
+    width: 170px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: normal;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: HelveticaNeueCyr;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 5px;
+}
+.search_form > form > input[type="submit"]:hover, .add_travel_offer:hover{
+    color: white;
+    background-color: #737373;
+}
+.offers{
+    padding: 15px;
+    padding-top: 5px;
+}
+.offers > a{
+    text-decoration: none;
+    color: inherit;
+}
+.offer_block{
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.offer_block:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+.offer_path, .offer_auto, .offer_place{
+    margin-left: 15px;
+}
+.inline-top{
+    display: inline-block;
+    vertical-align: top;
+}
+.user_image{
+    width: 45px;
+    height: 45px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.user_image > img{
+    max-height: 100%;
+}
+.upper_info{
+    margin-bottom: 10px;
+}
+
+.view_travel{
+    padding-left: 15px;
+}
+.view_user_image{
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.view_user_image > img{
+    max-height: 100%;
+}
+.view_travel > table{
+    width: 100%;
+}
+tr.info{
+    font-size: 13px;
+}
+tr.info > td{
+    height: 30px;
+}
+.travel_desc{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+a.add_response{
+    margin-top: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    width: 265px;
+    height: 30px;
+    background-color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #060912;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+a.add_response:hover{
+    background-color: #cbcbcb;
+}
+
+.help_block{
+    position: absolute;
+    background-color: white;
+    height: 200px;
+    overflow-y: scroll;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    font-family: HelveticaNeueCyr;
+    font-size: 13px;
+    display: none;
+}
+.city > .city_name{
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.city:nth-of-type(n + 2){
+    padding-top: 5px;
+}
+.city > .area{
+    font-size: 11px;
+    margin-top: 0;
+}
+.city{
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    padding: 5px;
+}
+.city:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+a.back_to_travel{
+    display: block;
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    margin-top: -10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+a.back_to_travel:hover{
+    text-decoration: underline;
+}
+textarea#travel_desc{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,1);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
