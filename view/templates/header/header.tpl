@@ -41,7 +41,7 @@
                 <p class="left_menu_title">Сервисы</p>
                 <a href="/services/seans"><li>Кино</li></a>
                 <a href="/services/music"><li>Музыка</li></a>
-                <a href="/services/travel"><li>Поиск попутчиков</li></a>
+                <a href="/services/travel"><li>Попутчики</li></a>
                 <a href="/services/games"><li>Игры</li></a>
             </ul>
             <?php if(isset($_SESSION['USER'])){ ?>

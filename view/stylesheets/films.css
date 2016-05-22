@@ -380,3 +380,61 @@ span.not_players{
 .satisfactory{
     border: 1px solid orange;
 }
+
+form.comment_form{
+    margin-top: -10px;
+}
+form.comment_form > input[type="text"]{
+    width: 100px;
+    height: 25px;
+    border: 1px solid white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: transparent;
+    padding-left: 5px;
+    color: #fff;
+}
+
+.input_title{
+    color: white;
+    font-family: Verdana;
+    font-size: 13px;
+    margin-right: 10px;
+}
+form.comment_form > textarea{
+    width: 99%;
+    background: transparent;
+    color: white;
+    padding-left: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid white;
+    height: 200px;
+    overflow-y: hidden;
+    margin-bottom: -4px;
+    margin-top: 10px;
+    font-family: Verdana;
+    resize: none;
+}
+form.comment_form > input[type="submit"]:hover{
+    background-color: rgba(215, 215, 215, 1);
+}
+form.comment_form > input[type="submit"]{
+    width: 99.9%;
+    height: 40px;
+    background-color: white;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    border: none;
+    margin-top: -8px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}

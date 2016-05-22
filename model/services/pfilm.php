@@ -89,6 +89,54 @@
 				$result['issetInList'] = false;
 			}
 
+			$query = "SELECT * FROM `feedback_films` ";
+			$query .= "JOIN `users` ON `users`.`user_id` = `feedback_films`.`feedback_user` ";
+			$query .= "WHERE `feedback_films`.`feedback_film_id` = '$filmId' ORDER BY `feedback_films`.`feedback_id` DESC";
+
+			$result['feedback'] = $this->db->query($query);
+
+			return $result;
+		}
+
+		public function addComment($filmId, $data){
+			foreach ($data as $key => $value){
+				$data[$key] = htmlspecialchars($this->db->escape($value));
+			}
+			$this->load->model('profile/user');
+			$user = $this->model_profile_user->getUser();
+			$userId = $user->row['user_id'];
+			$gameId = $this->db->escape($gameId);
+
+			$query = "SELECT * FROM `feedback_films` WHERE `feedback_user` = '$userId' AND `feedback_film_id` = '$filmId'";
+
+			$commentIsset = $this->db->query($query);
+			if ($commentIsset->num_rows > 0){
+				$result['status'] = 'error';
+				$result['text'] = 'Вы уже оставляли отзыв к данной игре';
+			} else {
+				$date = date('Y-m-d H:i:s');
+				$query = "INSERT INTO `feedback_films` ";
+				$query .= "(feedback_film_id, feedback_user, feedback_text, feedback_rate, feedback_date) ";
+				$query .= "VALUES ('$filmId', '$userId', '$data[comment_text]', '$data[rate]', '$date')";
+				$this->db->query($query);
+
+				$query = "SELECT * FROM `feedback_films` WHERE `feedback_film_id` = '$filmId'";
+
+				$game = $this->db->query($query);
+				$newRate = 0;
+				for ($i = 0; $i < $game->num_rows; $i++){
+					$newRate += $game->rows[$i]['feedback_rate'];
+				}
+
+				$newRate = $newRate / $game->num_rows;
+				$newRate = $newRate * 10;
+
+				$this->db->query("UPDATE `films` SET `rating` = '$newRate' WHERE `id` = '$filmId'");
+
+				$result['status'] = 'okay';
+				$result['text'] = 'Вы успешно оставили отзыв';
+			}
+
 			return $result;
 		}
 	}

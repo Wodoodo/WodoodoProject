@@ -37,11 +37,11 @@ $(document).ready(function(){
 		}
 		$('.user_play_button').eq(songNumber-1).attr('src', '/view/images/play_mini.png');
 		$('.user_audio_list_block > .user_audio_block').eq(songNumber-1).css({
-			'background-color': '#fff',
+			'background-color': 'transparent',
 			'border-radius': 0
 		});
 		$('.user_audio_list_block > .user_audio_block').eq(songNumber).css({
-			'background-color': 'rgba(0, 183, 220, 0.06)',
+			'background-color': 'rgba(0, 183, 220, 0.5)',
 			'border-radius': 10 + 'px'
 		});;
 	}
@@ -275,9 +275,9 @@ function changeMusicTime(newTime, audio){
 
 function changeVolume(newVolume, audio){
 	audio.volume = (newVolume)/100;
-	var date = new Date(new Date().getTime() + 60 * 1000);
+	var date = new Date(new Date().getTime() + 6000 * 1000);
 	$('.volume_level').text(newVolume + '%');
-	document.cookie = "AUDIO_VOLUME=" + (newVolume)/100 + "; path=/; expires=" + date.toUTCString();
+	document.cookie = "AUDIO_VOLUME=" + (newVolume)/100 + "; path=/; expires=" + 7;
 }
 
 function getCookie(name) {
@@ -294,8 +294,10 @@ function firstLoad(audio){
 	$('.player_audio_info > .user_audio_track_name').text($('.user_audio_list_block > .user_audio_block > .user_audio_info > .user_audio_track_name').first().text());
 	$('p.all_track_time').text($('.user_audio_list_block > .user_audio_block > .user_audio_info > .user_audio_time').first().text());
 	$('.album_photo > img').attr('src', $('.user_audio_photo_block > img').first().attr('src'));
-	musicPath = musicPath.replace('/hosting/home/vsemhorosho/wodoodo/', '/');
-	audio.src = musicPath;
+	if (musicPath != undefined) {
+		musicPath = musicPath.replace('/hosting/home/vsemhorosho/wodoodo/', '/');
+		audio.src = musicPath;
+	}
 }
 
 function nextMusic(prevSongIndex, soundIndex, flag){
@@ -303,11 +305,11 @@ function nextMusic(prevSongIndex, soundIndex, flag){
 	var nextItem = $('.user_audio_list_block > .user_audio_block').eq(soundIndex);
 	var itemAttr = nextItem.attr('path');
 	prevItem.css({
-		'background-color': '#fff',
+		'background-color': 'transparent',
 		'border-radius': 0
 	});
 	nextItem.css({
-		'background-color': 'rgba(0, 183, 220, 0.06)',
+		'background-color': 'rgba(0, 183, 220, 0.5)',
 		'border-radius': 10 + 'px'
 	});
 	if(!flag){
@@ -317,6 +319,8 @@ function nextMusic(prevSongIndex, soundIndex, flag){
 	$('.player_audio_info > .user_audio_track_name').text($('.user_audio_list_block > .user_audio_block > .user_audio_info > .user_audio_track_name').eq(soundIndex).text());
 	$('p.all_track_time').text($('.user_audio_list_block > .user_audio_block > .user_audio_info > .user_audio_time').eq(soundIndex).text());
 	$('.album_photo > img').attr('src', $('.user_audio_photo_block > img').eq(soundIndex).attr('src'));
-	itemAttr = itemAttr.replace('/hosting/home/vsemhorosho/wodoodo/', '/');
+	if (itemAttr != undefined) {
+		itemAttr = itemAttr.replace('/hosting/home/vsemhorosho/wodoodo/', '/');
+	}
 	return itemAttr;
 }

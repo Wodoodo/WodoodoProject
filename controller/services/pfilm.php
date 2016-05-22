@@ -6,6 +6,7 @@
 				$data['film'] = $this->getFilmInfo($_GET['film']);
 				$data['players'] = $data['film']['gamePlayers'];
 				$data['issetInList'] = $data['film']['issetInList'];
+				$data['feedback'] = $data['film']['feedback'];
 				$pageTitle = $data['film']['name']; 
 				$this->registry->set('pageTitle', $pageTitle);
 			}
@@ -70,6 +71,7 @@
 			$wather = $this->model_services_pfilm->getWatcher($this->db->escape($data['id']));
 			$data['gamePlayers'] = $wather['gamePlayers'];
 			$data['issetInList'] = $wather['issetInList'];
+			$data['feedback'] = $wather['feedback'];
 			return $data;
 		}
 
@@ -82,6 +84,12 @@
 		public function deleteFromList(){
 			$this->load->model('services/pfilm');
 			$result = $this->model_services_pfilm->deleteFromList($_GET['film']);
+			MessageSend($result['status'], $result['text'], 'services/pfilm?film=' . $_GET['film']);
+		}
+
+		public function addComment(){
+			$this->load->model('services/pfilm');
+			$result = $this->model_services_pfilm->addComment($_POST['id'], $_POST);
 			MessageSend($result['status'], $result['text'], 'services/pfilm?film=' . $_GET['film']);
 		}
 	}
