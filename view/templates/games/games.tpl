@@ -1,56 +1,25 @@
 <div class="games_information">
     <p class="title">Жанры</p>
     <div class="genre_wrapper">
-        <a href="" class="genre_block">Стратегии</a>
-        <a href="" class="genre_block">Ролевые</a>
-        <a href="" class="genre_block">Приключения</a>
-        <a href="" class="genre_block">Инди</a>
+        <a href="/services/games" class="genre_block">Все жанры</a>
+        <a href="/services/games?genre=RPG" class="genre_block">RPG</a>
+        <a href="/services/games?genre=Shouter" class="genre_block">Шутеры</a>
+        <a href="/services/games?genre=Adventure" class="genre_block">Приключения</a>
     </div>
-    <p class="title">Games</p>
+    <p class="title">Последние добавленные игры</p>
     <div class="games_wrapper">
-        <a href="/services/pgames">
+        <?php for ($i = 0; $i < $game->num_rows; $i++) { ?>
+        <a href="/services/pgames?id=<?php echo $game->rows[$i]['game_id']; ?>">
             <div class="games_block">
                 <div class="games_photo_block">
-                    <img src="/view/images/games/witcher.jpg">
+                    <img src="/view/images/games/<?php echo $game->rows[$i]['game_photo']; ?>" alt="">
                 </div>
                 <div class="games_info_block">
-                    <p class="games_name">The Witcher 3: Wild Hunt</p>
-                    <p class="games_genre">Фантастика, приключения</p>
+                    <p class="games_name"><?php echo $game->rows[$i]['game_name']; ?></p>
+                    <p class="games_genre"><?php echo $game->rows[$i]['game_genre']; ?></p>
                 </div>
             </div>
         </a>
-        <a href="/services/pgames">
-            <div class="games_block">
-                <div class="games_photo_block">
-                    <img src="/view/images/games/witcher.jpg">
-                </div>
-                <div class="games_info_block">
-                    <p class="games_name">The Witcher 3: Wild Hunt</p>
-                    <p class="games_genre">Фантастика, приключения</p>
-                </div>
-            </div>
-        </a>
-        <a href="/services/pgames">
-            <div class="games_block">
-                <div class="games_photo_block">
-                    <img src="/view/images/games/witcher.jpg">
-                </div>
-                <div class="games_info_block">
-                    <p class="games_name">The Witcher 3: Wild Hunt</p>
-                    <p class="games_genre">Фантастика, приключения</p>
-                </div>
-            </div>
-        </a>
-        <a href="/services/pgames">
-            <div class="games_block">
-                <div class="games_photo_block">
-                    <img src="/view/images/games/witcher.jpg">
-                </div>
-                <div class="games_info_block">
-                    <p class="games_name">The Witcher 3: Wild Hunt</p>
-                    <p class="games_genre">Фантастика, приключения</p>
-                </div>
-            </div>
-        </a>
+        <?php } ?>
     </div>
 </div>

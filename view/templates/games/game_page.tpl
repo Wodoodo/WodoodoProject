@@ -1,127 +1,90 @@
 <div class="games_info_wrapper">
-    <p class="games_title">The Witcher 3: Wild Hunt</p>
+    <p class="games_title"><?php echo $game->row['game_name']; ?></p>
+    <a href="/services/games" class="back_to_games">← Назад к играм</a>
+    <?php MessageShow(); ?>
     <div class="games_info">
         <ul class="const_info_list">
             <li>Жанр</li>
-            <li>Год</li>
+            <li>Дата выхода</li>
             <li>Страна</li>
-            <li>Время</li>
+            <li>Разработчик</li>
             <li>Рейтинг</li>
             <li>Возраст</li>
         </ul>
         <ul class="info_list">
-            <li>Фэнтези</li>
-            <li>2016</li>
-            <li>США</li>
-            <li>114 минут</li>
-            <li style="color: red;">33%</li>
-            <li>18+</li>
+            <li><?php echo $game->row['game_genre']; ?></li>
+            <li><?php $date = date('d M Y', strtotime($game->row['game_date'])); echo $date; ?></li>
+            <li><?php echo $game->row['game_country']; ?></li>
+            <li><?php echo $game->row['game_developer']; ?></li>
+            <li style="color: <?php if ($game->row['game_rate'] < 50) echo 'red'; else echo 'green'; ?>"><?php echo $game->row['game_rate']; ?>%</li>
+            <li><?php echo $game->row['game_cense']; ?>+</li>
         </ul>
     </div>
     <div class="about_games_block">
         <div class="games_picture_block">
-            <img src="/view/images/games/witcher.jpg">
+            <img src="/view/images/games/<?php echo $game->row['game_photo']; ?>">
         </div>
         <div class="about_games">
             <div class="description_block">
                 <p class="title_block_name" style="margin-top: 0;">Описание</p>
-                <p class="text_block">Когда любовь уходит, сердце прекрасной девы образется в лед. И даже сотни королевств не смогут сдержать поступь ее несметного воинства. Лишь Охотник не ведает страха. Сквозь проклятый лес он идет навстречу своей судьбе.</p>
-            </div>
-            <div class="role_block">
-                <p class="title_block_name">В ролях</p>
-                <p class="text_block">Крис Хемсворт, Сэм Клафлин, Эмили Балант, Джесика Чейстен, Шарлиз Терон, Софи Куксон, Ник Фрост, Колин Морган, Ралф Айнесон, Шеридан Смит</p>
-            </div>
-            <div class="producer_block">
-                <p class="title_block_name">Режиссер</p>
-                <p class="text_block">Седрик Нколя - Троян</p>
+                <p class="text_block"><?php echo $game->row['game_desc']; ?></p>
             </div>
         </div>
     </div>
     <div class="trailer_block">
         <p class="title_block_name">Трейлер к игре</p>
-        <video></video>
+        <iframe width="100%" height="570" src="<?php echo $game->row['game_trailer']; ?>" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="picture_games_block">
         <p class="title_block_name">Кадры из игры</p>
-        <img src="">
-        <img src="">
-        <img src="">
+        <?php $gallery = json_decode($game->row['game_gallery']);
+        for ($i = 0; $i < count($gallery->images); $i++) { ?>
+        <img src="/view/images/games/<?php echo $gallery->images[$i]; ?>">
+        <?php } ?>
     </div>
     <div class="users_wrapper">
          <p class="title_block_name">Играют</p>
-         <div class="show_all_users_btn">показать всех</div>
+         <!--<div class="show_all_users_btn">показать всех</div>--><?php echo (!$issetInList) ? '<a href="/services/pgames/addInList?id=' . $_GET['id'] . '" class="im_played">добавить меня в список</a>' : '<a href="/services/pgames/deleteFromList?id=' . $_GET['id'] . '" class="im_played">удалить меня из списка</a>'; ?>
          <div class="users_block">
+             <?php if ($players->num_rows == 0) { ?>
+             <span class="not_players">Пока еще никто не добавился в список играющих</span>
+             <?php } else { ?>
+             <?php for ($i = 0; $i < $players->num_rows; $i++) { ?>
              <div class="user_block">
                  <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
+                     <a href="/profile/user?id=<?php echo $players->rows[$i]['user_id']; ?>"><img src="/view/images/users/<?php echo $players->rows[$i]['user_photo']; ?>" alt=""></a>
                  </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
+                 <a href="/profile/user?id=<?php echo $players->rows[$i]['user_id']; ?>"><p class="user_name"><b><?php echo $players->rows[$i]['user_firstname']; ?></b><br/><?php echo $players->rows[$i]['user_lastname']; ?></p></a>
              </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
+             <?php } ?>
+             <?php } ?>
          </div>
     </div>
     <div class="comments_wrapper">
         <p class="title_block_name">Отзывы</p>
+        <?php if (isset($_SESSION['USER'])) { ?>
+        <form action="/services/pgames/addComment" class="comment_form" method="post">
+            <input type="text" name="id" value="<?php echo $_GET['id']; ?>" hidden readonly>
+            <span class="input_title">Ваша оценка (от 0 до 10):</span><input type="text" name="rate" pattern="(\d|10)" maxlength="2" required title="Введите число от 0 до 10">
+            <textarea name="comment_text" maxlength="1200"></textarea>
+            <input type="submit" name="add_comment">
+        </form>
+        <?php } else { ?>
+        <span class="not_players">Войдите или зарегистрируйтесь, чтобы оставлять отзывы</span><br><br>
+        <?php } ?>
         <div class="all_comments_block">
-            <div class="user_comments_block good">
-                <p class="user_login">Александр Бегун</p>
+            <?php for ($i = 0; $i < $feedback->num_rows; $i++) { ?>
+            <div class="user_comments_block <?php if (($feedback->rows[$i]['feedback_rate']) < 4) echo 'bad'; if ((($feedback->rows[$i]['feedback_rate']) > 3) && (($feedback->rows[$i]['feedback_rate']) < 7)) echo 'satisfactory'; if ($feedback->rows[$i]['feedback_rate'] > 6) echo 'good'; ?>">
+                <p class="user_login"><?php echo $feedback->rows[$i]['user_firstname'] . ' ' . $feedback->rows[$i]['user_lastname']; ?></p>
                 <div class="points_block">
-                     <p><b>Оценка: </b></p>
-                     <p class="points">8/10</p>
+                    <p><b>Оценка: </b></p>
+                    <p class="points"><?php echo $feedback->rows[$i]['feedback_rate']; ?>/10</p>
                 </div>
                 <div class="comments_text_block">
-                    <p>Жанр сказок на современный лад является достаточно рискованным в наше время. С одной стороны, нужно отдать дань уважения первоисточнику. С другой, сохранить какую никакую, но индивидуальность. С третьей, разбавить историю экшеном и юмором, дабы фильм подходил под формат качественного блокбастера. Потому, риск не оправдать ожидания достаточно велик. «Белоснежка и охотник» 2012-го года сама по себе является не самым плохим примером переноса сказки на экран. Да фильм страдал от сумбурного и порой скучного повествования, но тем не менее имел при себе много элементов, которые вытягивали фильм. Заработав неплохую кассу, Universal имела все шансы сделать новую фэнтези-франшизу. Однако, если учитывать то, что у первой части был первоисточник, которому хоть и не точно, но порой следовали, то придумать самостоятельную историю для второй части было бы довольно проблематично. Потому решение о производстве приквела было наиболее логичным вариантом. Плюс убрав из сюжета саму Белоснежку, был шанс сконцентрироваться на Охотнике.</p>
+                    <p><?php echo $feedback->rows[$i]['feedback_text']; ?></p>
                 </div>
             </div>
-            <div class="user_comments_block satisfactory">
-                <p class="user_login">Александр Бегун</p>
-                <div class="points_block">
-                     <p><b>Оценка: </b></p>
-                     <p class="points">5/10</p>
-                </div>
-                <div class="comments_text_block">
-                    <p>Жанр сказок на современный лад является достаточно рискованным в наше время. С одной стороны, нужно отдать дань уважения первоисточнику. С другой, сохранить какую никакую, но индивидуальность. С третьей, разбавить историю экшеном и юмором, дабы фильм подходил под формат качественного блокбастера. Потому, риск не оправдать ожидания достаточно велик. «Белоснежка и охотник» 2012-го года сама по себе является не самым плохим примером переноса сказки на экран. </p>
-                </div>
-            </div>
-            <div class="user_comments_block bad">
-                <p class="user_login">Александр Бегун</p>
-                <div class="points_block">
-                     <p><b>Оценка: </b></p>
-                     <p class="points">3/10</p>
-                </div>
-                <div class="comments_text_block">
-                    <p>Жанр сказок на современный лад является достаточно рискованным в наше время. С одной стороны, нужно отдать дань уважения первоисточнику. С другой, сохранить какую никакую, но индивидуальность. С третьей, разбавить историю экшеном и юмором, дабы фильм подходил под формат качественного блокбастера. Потому, риск не оправдать ожидания достаточно велик. «Белоснежка и охотник» 2012-го года сама по себе является не самым плохим примером переноса сказки на экран. Да фильм страдал от сумбурного и порой скучного повествования, но тем не менее имел при себе много элементов, которые вытягивали фильм. Заработав неплохую кассу, Universal имела все шансы сделать новую фэнтези-франшизу. Однако, если учитывать то, что у первой части был первоисточник, которому хоть и не точно, но порой следовали, то придумать самостоятельную историю для второй части было бы довольно проблематично. Потому решение о производстве приквела было наиболее логичным вариантом. Плюс убрав из сюжета саму Белоснежку, был шанс сконцентрироваться на Охотнике. Жанр сказок на современный лад является достаточно рискованным в наше время. С одной стороны, нужно отдать дань уважения первоисточнику. С другой, сохранить какую никакую, но индивидуальность. С третьей, разбавить историю экшеном и юмором, дабы фильм подходил под формат качественного блокбастера. Потому, риск не оправдать ожидания достаточно велик. «Белоснежка и охотник» 2012-го года сама по себе является не самым плохим примером переноса сказки на экран. Да фильм страдал от сумбурного и порой скучного повествования, но тем не менее имел при себе много элементов, которые вытягивали фильм. Заработав неплохую кассу, Universal имела все шансы сделать новую фэнтези-франшизу. Однако, если учитывать то, что у первой части был первоисточник, которому хоть и не точно, но порой следовали, то придумать самостоятельную историю для второй части было бы довольно проблематично. Потому решение о производстве приквела было наиболее логичным вариантом. Плюс убрав из сюжета саму Белоснежку, был шанс сконцентрироваться на Охотнике.</p>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </div>
