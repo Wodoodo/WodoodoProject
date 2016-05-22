@@ -1,32 +1,52 @@
-<?php
+	<?php
 	class ControllerServicesSeans extends Controller{
 		public function index(){
+			include_once($_SERVER['DOCUMENT_ROOT'] . '/view/javascripts/films/simple_html_dom.php');
+			$this->load->model('services/seans');
+			$pageTitle = 'Сервис кино - Wodoodo'; 
+			$this->registry->set('pageTitle', $pageTitle);
 			$pageStyles = array('header', 'horizontal_menu', 'films');
 			$this->registry->set('pageStyles', $pageStyles);
 			$data['header'] = $this->load->controller('header/header');
-			$data['films'] = $this->parse();
-			$this->load->model('services/seans');
+			if(!isset($_GET['genre'])){
+				$data['films'] = $this->parse();
+			} else {
+				$data['films'] = $this->model_services_seans->getFilms($this->db->escape($_GET['genre']));
+			}
+			$this->model_services_seans->loadFilms($data['films']);
 			$this->load->view('films/films', $data);
 		}
 
 		public function parse(){
-			$url = "http://afisha.tut.by/film/"; //<ul class="b-lists list_afisha online_list col-5">
-			$page = file_get_contents($url);
-			//$result = preg_match_all('/\<ul class\=\"b\-lists list\_afisha online\_list col\-5\"\>(.*)\<\/ul\>/s', $page, $found);
-			$result = preg_match_all('/\<div class\=\"events\-block js\-cut\_wrapper\"\>.*\<div class\=\"col\-i events\-block\"\>/s', $page, $found);
-			$result = preg_match_all('/\<ul class\=\"b\-lists list\_afisha online\_list col\-5\"\>.*\<\/ul\>/s', $found[0][0], $found);	
-			$countFilms = preg_match_all('/(?:\s\<p\>)(.*)(?=\<\/p\>)/', $found[0][0], $genre);
-			$countFilms = preg_match_all('/(?:\s\<a href\=\"http\:\/\/afisha\.tut\.by\/film\/)(.*)(?=\/\" class\=\"media\")/', $found[0][0], $url);
-			$countFilms = preg_match_all('/(?:\<img src\=\")(.*)(?=" )/', $found[0][0], $images);
-			$countFilms = preg_match_all('/(?:\<span itemprop\=\"summary\"\>)(.*)(?=\<\/span\>)/', $found[0][0], $filmName);
-			for($i = 0; $i < $countFilms; $i++){
-				$data[$i]['picture'] = $images[1][$i];
-				$data[$i]['name'] = $filmName[1][$i];
-				$data[$i]['genre'] = $genre[1][$i];
-				$data[$i]['url'] = $url[1][$i];
+			$url = "http://afisha.tut.by/film/";
+			$page = file_get_html($url); 
+			$div = $page->find('.js-cut_wrapper', 0);
+			$i = 0;
+			foreach ($div->find('.media') as $a){
+			 	$href = $a->href;
+			 	$countFilms = preg_match_all('/(?:http\:\/\/afisha\.tut\.by\/film\/)(.*)(?=\/)/', $href, $url);
+			 	$data[$i]['url'] = $url[1][0];
+			 	$i++;	 	
+			}  
+			$i = 0;
+			foreach ($div->find('.media img') as $img){
+			 	$src = $img->src;
+			 	$data[$i]['picture'] = $src;
+			 	$i++;	 	
+			} 
+			$i = 0;
+			foreach ($div->find('.name span') as $name){
+			 	$name = $name->innertext;
+			 	$data[$i]['name'] = $name;
+			 	$i++;	 	
+			} 
+			$i = 0;
+			foreach ($div->find('.txt p') as $genre){
+			 	$genre = $genre->innertext;
+			 	$data[$i]['genre'] = $genre;
+			 	$i++;	 	
 			}
-			//echo "Matches: $countFilms<br>";
-			//var_dump($url);
+
 			return $data;
 		}
 

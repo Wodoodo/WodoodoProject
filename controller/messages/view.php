@@ -3,14 +3,18 @@
 		public function index(){
 			$pageStyles = array('header', 'horizontal_menu', 'dialogues');
 			$this->registry->set('pageStyles', $pageStyles);
-
-			$data['header'] = $this->load->controller('header/header');
-
 			$this->load->model("messages/dialogues");
 
-			$data['messages'] = $this->model_messages_dialogues->getMessages($_GET['id']);
+			if(isset($_SESSION['USER'])){
+				$data['header'] = $this->load->controller('header/header');
 
-			$this->load->view("messages/dialogues", $data);
+				$data['messages'] = $this->model_messages_dialogues->getMessages($_GET['id']);
+
+				$this->load->view("messages/dialogues", $data);
+			} else {
+            	ob_end_clean();
+                exit(header("Location: /profile/sign/signin"));
+            }
 		}
 
 		public function sendMessage(){

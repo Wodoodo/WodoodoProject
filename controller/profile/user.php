@@ -19,6 +19,9 @@
             }
 
             $data['user_id'] = $userInfo->row['user_id'];
+            $pageTitle = $userInfo->row['user_firstname'] . ' ' . $userInfo->row['user_lastname'] . ' - Wodoodo'; 
+            $this->registry->set('pageTitle', $pageTitle);
+            
             $result = $this->model_profile_user->checkButtonText($this->db->escape($_GET['id']));   
                         /* USER INFORMATION */
             $Month = array("January" => "января", "February" => "февраля", "March" => "марта", "April" => "апреля", "May" => "мая", "June" => "июня", "July" => "июля",

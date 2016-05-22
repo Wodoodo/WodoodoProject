@@ -1,5 +1,7 @@
 <div class="film_info_wrapper">
     <p class="film_title"><?php echo $film['name']; ?></p>
+    <a href="/services/seans" class="back_to_films">← Назад к фильмам</a>
+    <?php MessageShow(); ?>
     <div class="film_info">
         <ul class="const_info_list">
             <li>Жанр</li>
@@ -10,12 +12,12 @@
             <li>Возраст</li>
         </ul>
         <ul class="info_list">
-            <li>Фэнтези</li>
-            <li>2016</li>
-            <li>США</li>
-            <li>114 минут</li>
-            <li style="color: red;">33%</li>
-            <li>16+</li>
+            <li><?php echo (isset($film['genre'])) ? $film['genre'] : "-" ?></li>
+            <li><?php echo (isset($film['year'])) ? $film['year'] : "-" ?></li>
+            <li><?php echo (isset($film['author'])) ? $film['author'] : "-" ?></li>
+            <li><?php echo (isset($film['duration'])) ? $film['duration'] : "-" ?></li>
+            <li style="color: <?php echo $film['color']; ?>;"><?php echo (isset($film['rating'])) ? $film['rating'] . '%' : '0%' ?></li>
+            <li><?php echo (isset($film['age'])) ? $film['age'] : "0+" ?></li>
         </ul>
     </div>
     <div class="about_film_block">
@@ -27,69 +29,55 @@
                 <p class="title_block_name" style="margin-top: 0;">Описание</p>
                 <p class="text_block"><?php echo $film['text']; ?></p>
             </div>
-            <div class="role_block">
-                <p class="title_block_name">В ролях</p>
-                <p class="text_block">Крис Хемсворт, Сэм Клафлин, Эмили Балант, Джесика Чейстен, Шарлиз Терон, Софи Куксон, Ник Фрост, Колин Морган, Ралф Айнесон, Шеридан Смит</p>
-            </div>
-            <div class="producer_block">
-                <p class="title_block_name">Режиссер</p>
-                <p class="text_block">Седрик Нколя - Троян</p>
-            </div>
+            <?php if(isset($film['role'])){ ?>
+                <div class="role_block">
+                    <p class="title_block_name">В ролях</p>
+                    <p class="text_block"><?php echo $film['role']; ?></p>
+                </div>
+            <?php } ?>
+            <?php if(isset($film['producer'])){ ?>
+                <div class="producer_block">
+                    <p class="title_block_name">Режиссер</p>
+                    <p class="text_block"><?php echo $film['producer']; ?></p>
+                </div>
+            <?php } ?>
         </div>
     </div>
-    <div class="trailer_block">
-        <p class="title_block_name">Трейлер к фильму</p>
-        <video></video>
-    </div>
-    <div class="picture_film_block">
-        <p class="title_block_name">Кадры фильма</p>
-        <img src="">
-        <img src="">
-        <img src="">
-    </div>
+    <?php if(isset($film['video'])){ ?>
+        <div class="trailer_block">
+            <p class="title_block_name">Трейлер к фильму</p>
+            <video controls poster="<?php echo $film['poster']; ?>">
+                <source src="<?php echo $film['video']; ?>">
+            </video>
+        </div>
+    <?php } ?>
+    <?php if(isset($film[0]['photoList'])){ ?>
+        <div class="picture_film_block">
+            <p class="title_block_name">Кадры фильма</p>
+            <?php for($i = 0; $i < 3; $i++){ ?>
+                <img src="<?php echo $film[$i]['photoList']; ?>">
+            <?php } ?>
+        </div>
+    <?php } ?>
     <!--<div class="info_ticket_block">
          <p class="title_block_name">Купить билеты</p>
     </div>-->
     <div class="users_wrapper">
-         <p class="title_block_name">Хотят сходить на этот фильм</p>
-         <div class="show_all_users_btn">показать всех</div>
+         <p class="title_block_name">Смотрят</p>
+         <!--<div class="show_all_users_btn">показать всех</div>--><?php echo (!$issetInList) ? '<a href="/services/pfilm/addInList?film=' . $_GET['film'] . '" class="im_played">добавить меня в список</a>' : '<a href="/services/pfilm/deleteFromList?film=' . $_GET['film'] . '" class="im_played">удалить меня из списка</a>'; ?>
          <div class="users_block">
+             <?php if ($players->num_rows == 0) { ?>
+             <span class="not_players">Пока еще никто не добавился в список смотрящих</span>
+             <?php } else { ?>
+             <?php for ($i = 0; $i < $players->num_rows; $i++) { ?>
              <div class="user_block">
                  <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
+                     <a href="/profile/user?id=<?php echo $players->rows[$i]['user_id']; ?>"><img src="/view/images/users/<?php echo $players->rows[$i]['user_photo']; ?>" alt=""></a>
                  </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
+                 <a href="/profile/user?id=<?php echo $players->rows[$i]['user_id']; ?>"><p class="user_name"><b><?php echo $players->rows[$i]['user_firstname']; ?></b><br/><?php echo $players->rows[$i]['user_lastname']; ?></p></a>
              </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
-             <div class="user_block">
-                 <div class="user_photo_block">
-                     <a href=""><img src="/view/images/users/sanya_lol.jpg"></a>
-                 </div>
-                 <a href=""><p class="user_name"><b>Лол</b><br>Кекович</p></a>
-             </div>
+             <?php } ?>
+             <?php } ?>
          </div>
     </div>
     <div class="comments_wrapper">

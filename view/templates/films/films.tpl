@@ -1,10 +1,13 @@
 <div class="film_information">
     <p class="title">Жанры</p>
     <div class="genre_wrapper">
-        <a href="" class="genre_block">Комедия</a>
-        <a href="" class="genre_block">Драма</a>
-        <a href="" class="genre_block">Приключения</a>
-        <a href="" class="genre_block">Ужасы</a>
+        <a href="/services/seans" class="genre_block">Все жанры</a>
+        <a href="/services/seans?genre=Драма" class="genre_block">Драма</a>
+        <a href="/services/seans?genre=Приключения" class="genre_block">Приключения</a>
+        <a href="/services/seans?genre=Ужасы" class="genre_block">Ужасы</a>
+        <a href="/services/seans?genre=Комедия" class="genre_block">Комедия</a>
+        <a href="/services/seans?genre=Документальный" class="genre_block">Документальный</a>
+        <a href="/services/seans?genre=Боевик" class="genre_block">Боевик</a>
     </div>
     <p class="title">Кино сегодня</p>
     <div class="tickets_wrapper">

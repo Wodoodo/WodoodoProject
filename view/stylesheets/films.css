@@ -109,7 +109,7 @@ body{
 }
 .film_info{
     width: 100%;
-    height: 100px;
+    height: auto;
 }
 .const_info_list{
     list-style: none;
@@ -134,8 +134,14 @@ body{
     display: inline-block;
     color: white;
     font-family: Verdana;
+    vertical-align: middle;
     font-size: 16px;
     width: 16%;
+}
+.info_list > li > a{
+    text-decoration: none;
+    color: white;
+    cursor: default;
 }
 .about_film_block{
     width: 100%;
@@ -187,16 +193,16 @@ body{
 }
 .trailer_block{
     width: 100%;
-    height: 600px;
+    max-height: 600px;
     margin-bottom: 30px;
 }
 .picture_film_block{
     width: 100%;
-    height: 200px;
+    height: 250px;
 }
 .picture_film_block > img{
     width: 30%;
-    height: 80%;
+    height: 75%;
     margin-right: 20px;
 }
 .users_wrapper{
@@ -305,6 +311,66 @@ body{
     margin: 0;
     color: white;
 }
+video{
+    width: 100%;
+}
+a.back_to_films {
+    display: block;
+    color: white;
+    font-family: Verdana;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: -15px;
+}
+a.back_to_films:hover{
+    text-decoration: underline;
+}
+a.im_played{ 
+    display: inline-block; 
+    vertical-align: middle; 
+    color: white; 
+    /*margin-left: 15px;*/ 
+    margin-top: -4px; 
+    text-decoration: none; 
+    font-family: Verdana; 
+    font-size: 14px; 
+} 
+a.im_played:hover{ 
+    text-decoration: underline; 
+} 
+
+.okay_message_popup{ 
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px; 
+    border-radius: 3px; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+    width: 100%; 
+    height: 35px; 
+    background-color: #2ecc71; 
+    border-bottom: 2px solid #27ae60; 
+    color: white; 
+} 
+.okay_message_popup > p{ 
+    padding-top: 8px; 
+    padding-left: 10px; 
+    font-family: Verdana; 
+    font-size: 13px; 
+} 
+span.not_players{ 
+    color: white; 
+    font-family: Verdana; 
+    font-size: 13px; 
+}
+.photo{
+    display: none;
+}
+.persone{
+    text-decoration: none;
+    color: white;
+    cursor: default;
+}
 .good{
     border: 1px solid green;
 }
@@ -312,5 +378,5 @@ body{
     border: 1px solid red;
 }
 .satisfactory{
-    border: 1px solid yellow;
+    border: 1px solid orange;
 }
