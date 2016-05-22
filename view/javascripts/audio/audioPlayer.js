@@ -14,10 +14,10 @@ $(document).ready(function(){
 
 
 	$('#play_music').click(function(){
-		playMyEbanyMusic(audio);
+		playMyListMusic(audio);
 	});
 
-	function playMyEbanyMusic(audio){
+	function playMyListMusic(audio){
 		if (!musicIsPlaying){
 			audio.currentTime = (audio.currentTime) ? audio.currentTime : 0;
 			audio.play();
@@ -58,7 +58,7 @@ $(document).ready(function(){
 		audio.addEventListener('loadedmetadata', function() {
 		    //console.log("Playing " + audio.src + ", for: " + audio.duration + "seconds.");
 		    musicIsPlaying = false;
-			playMyEbanyMusic(audio); 
+			playMyListMusic(audio); 
 			//nextMusic(songNumber-1, songNumber);
 		    $('p.all_track_time').text(Math.floor(audio.duration / 60) + ':' + (audio.duration % 60).toFixed(0));
 		});
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		audio.addEventListener('loadedmetadata', function() {
 		    //console.log("Playing " + audio.src + ", for: " + audio.duration + "seconds.");
 		    musicIsPlaying = false;
-			playMyEbanyMusic(audio); 
+			playMyListMusic(audio); 
 			//nextMusic(prevSongNum, songNumber);
 		    $('p.all_track_time').text(Math.floor(audio.duration / 60) + ':' + (audio.duration % 60).toFixed(0));
 		});
@@ -150,7 +150,7 @@ $(document).ready(function(){
 				audio.addEventListener('loadedmetadata', function() {
 				    //console.log("Playing " + audio.src + ", for: " + audio.duration + "seconds.");
 				    musicIsPlaying = false;
-					playMyEbanyMusic(audio); 
+					playMyListMusic(audio); 
 				    $('p.all_track_time').text(Math.floor(audio.duration / 60) + ':' + (audio.duration % 60).toFixed(0));
 				});
 				$('.user_play_button').eq(prevSongNum).attr('src', '/view/images/play_mini.png');
@@ -162,7 +162,7 @@ $(document).ready(function(){
 				audio.addEventListener('loadedmetadata', function() {
 				    //console.log("Playing " + audio.src + ", for: " + audio.duration + "seconds.");
 				    musicIsPlaying = false;
-					playMyEbanyMusic(audio); 
+					playMyListMusic(audio); 
 				    $('p.all_track_time').text(Math.floor(audio.duration / 60) + ':' + (audio.duration % 60).toFixed(0));
 				});
 				$('.user_play_button').eq(prevSongNum).attr('src', '/view/images/play_mini.png');
